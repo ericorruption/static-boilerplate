@@ -1,0 +1,100 @@
+/******************************************************************************/
+/* Universal Mixins */
+/******************************************************************************/
+
+// Viewport. Defaults: (@width: device-width, @zoom: 1.0)
+// These should have the same values as the meta viewport tag.
+.viewport;
+
+// Selection. Defaults: (@bg-color: @link-color, @text-color: @text-color)
+.selection;
+
+// Input placeholder text color. In case you want to change the browser default.
+// .placeholder-color(#333);
+
+// @font-face mixin. Values: @font-name, @font-path, @weight, @style.
+// .font-face(Louis, '../fonts/louisbold-webfont');
+
+// ****************************************************************************/
+// In-class Mixins, extendable */
+// ****************************************************************************/
+
+// REM font-sizes. Pixel values will be converted to REM, with pixel fallback.
+//.font-size();
+
+// Image replacement. Set a background image, width, height
+// and display block or inline-block for the element.
+//.ir all;
+
+// Hide visually, but let available for screenreaders.
+//.visuallyhidden;
+
+// CSS transitions. Default: all 0.3s ease-out;
+//.transition;
+
+// Cross browser opacity. Use values between 0 and 1.
+//.opacity(.5);
+
+/******************************************************************************/
+/* Examples */
+/******************************************************************************/
+
+a{
+  .transition;
+
+  &:hover{
+    .opacity(.3);
+  }
+}
+
+// default full width column
+.content-block {
+  margin: 0 auto;
+  padding: 0 2%;
+  max-width: 58.75em; // 940px
+}
+
+.logo {
+  &:extend(.ir all);
+  display: block;
+  background: url(http://placehold.it/150x90&text=mobile) no-repeat 0 0;
+  width: 150px;
+  height: 90px;
+}
+
+.goto-content {
+  &:extend(.visuallyhidden);
+}
+
+.main-content {
+  &:extend(.content-block);
+}
+
+h1{
+  .font-size(42px);
+}
+
+/******************************************************************************/
+/* Other */
+/******************************************************************************/
+
+// Using media queries
+@media (min-width: 600px) {
+  .logo{
+    background-image: url(http://placehold.it/150x90&text=tablet);
+  }
+}
+
+@media (min-width: 960px) {
+  .logo{
+    background-image: url(http://placehold.it/150x90&text=desktop);
+  }
+}
+
+// oldIE classes
+// target lowerThan-ieVersion classes.
+.lt-ie10, .lt-ie9{
+  .logo{
+    background-image: url(http://placehold.it/150x90&text=iexplorer);
+  }
+}

@@ -1,0 +1,4 @@
+css/*.css
+js/default.min.js
+bower_components
+node_modules

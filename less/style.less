@@ -1,0 +1,19 @@
+@bower-path: 'bower_components';
+
+@import (less) '@{bower-path}/normalize-css/normalize.css';
+
+// Using bootstrap? Uncomment the lines below.
+// @bootstrap-path: '@{bower-path}/bootstrap/less';
+// @import '_bootstrap.less';
+
+// Variables partial. To override bootstrap's or use your own variables.
+@import "_variables.less";
+
+// Default partials. Don't mess with these!
+@import "_mixins.less";
+@import "_print.less";
+@import "_default.less";
+
+// From now on, free territory. Use as much partials as necessary.
+// Write only @import's here.
+@import "_custom.less";

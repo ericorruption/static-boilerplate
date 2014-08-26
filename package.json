@@ -1,0 +1,15 @@
+{
+  "name": "my-project-name",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-include-replace": "latest",
+    "grunt-newer": "latest",
+    "load-grunt-tasks": "latest"
+  }
+}

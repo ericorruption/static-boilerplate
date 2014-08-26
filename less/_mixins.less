@@ -1,0 +1,104 @@
+.font-face(@font-family, @file-path, @weight: normal, @style: normal ) {
+  @font-face {
+    font-family: @font-family;
+    src: url("@{file-path}.eot");
+    src: url("@{file-path}.eot?#iefix") format('embedded-opentype'),
+         url("@{file-path}.woff") format('woff'),
+         url("@{file-path}.ttf") format('truetype'),
+         url("@{file-path}.svg#@{font-family}") format('svg');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+.viewport(@width: device-width, @zoom: 1.0){
+  @-ms-viewport {
+    width: @width;
+    zoom: @zoom;
+  }
+
+  @viewport {
+    width: @width;
+    zoom: @zoom;
+  }
+}
+
+.selection(@bg-color: @link-color, @text-color: @text-color){
+  ::-moz-selection {
+    background: @bg-color;
+    text-shadow: none;
+    color: @text-color;
+  }
+
+  ::selection {
+    background: @bg-color;
+    text-shadow: none;
+    color: @text-color;
+  }
+}
+
+.placeholder-color(@text-color){
+  &:-ms-input-placeholder{
+    color: @text-color;
+  }
+
+  &::-moz-placeholder {
+    color: @text-color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: @text-color;
+  }
+}
+
+.font-size(@size) {
+  @rem: @size / 16;
+
+  font-size: @size;
+  font-size: unit(@rem, rem);
+}
+
+.opacity(@value) {
+  @ie-value: @value * 100;
+
+  opacity: @value;
+  filter: alpha(opacity=@ie-value);
+}
+
+.transition(@params: all 0.3s ease-out) {
+  transition: @params;
+}
+
+/*
+ * Image replacement (does not work on buttons/inputs)
+ */
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
