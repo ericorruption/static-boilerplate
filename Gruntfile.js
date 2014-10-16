@@ -71,6 +71,7 @@ module.exports = function(grunt) {
       livereload: {
         files: [
           '*.php',
+          '*.html',
           'css/*.min.css',
           'js/**/*.min.js'
         ],
