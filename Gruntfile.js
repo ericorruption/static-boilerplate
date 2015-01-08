@@ -86,5 +86,5 @@ module.exports = function(grunt) {
   // Default tasks
   grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'uglify:basic']);
+  grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
 };
