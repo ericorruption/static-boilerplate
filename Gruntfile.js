@@ -7,6 +7,13 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+    // BOWER
+    shell: {
+      bower: {
+        command: 'bower update'
+      }
+    },
+
     // LESS / CSS
     autoprefixer: {
       basic: {
@@ -86,5 +93,5 @@ module.exports = function(grunt) {
   // Default tasks
   grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
+  grunt.registerTask('build', ['shell', 'less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
 };

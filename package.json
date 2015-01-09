@@ -10,6 +10,7 @@
     "grunt-contrib-watch": "latest",
     "grunt-include-replace": "latest",
     "grunt-newer": "latest",
+    "grunt-shell": "latest",
     "load-grunt-tasks": "latest"
   }
 }
