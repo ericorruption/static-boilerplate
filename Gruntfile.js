@@ -7,14 +7,15 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    // BOWER
+    // Bower
     shell: {
       bower: {
         command: 'bower update'
       }
     },
 
-    // SERVE
+
+    // Serve
     connect: {
       dev: {
         options: {
@@ -27,7 +28,17 @@ module.exports = function(grunt) {
       }
     },
 
+
     // LESS / CSS
+    less: {
+      basic: {
+        expand: true,
+        cwd: '<%= pkg.root %>/less/',
+        src: ['**/*.less', '!**/_*.less'],
+        dest: '<%= pkg.root %>/css/',
+        ext: '.css'
+      }
+    },
     autoprefixer: {
       basic: {
         expand: true,
@@ -47,15 +58,6 @@ module.exports = function(grunt) {
       }
     },
 
-    less: {
-      basic: {
-        expand: true,
-        cwd: '<%= pkg.root %>/less/',
-        src: ['**/*.less', '!**/_*.less'],
-        dest: '<%= pkg.root %>/css/',
-        ext: '.css'
-      }
-    },
 
     // JS
     includereplace: {
@@ -76,24 +78,30 @@ module.exports = function(grunt) {
       }
     },
 
-    // watching
+    // Watching
     watch: {
       less: {
         files: ['<%= pkg.root %>/less/*.less'],
-        tasks: ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic']
+        tasks: ['css']
       },
 
       js: {
         files: ['<%= pkg.root %>/js/*.dist.js', '<%= pkg.root %>/js/_*.js'],
-        tasks: ['newer:includereplace:basic', 'newer:uglify:basic']
+        tasks: ['javascript']
       },
+
+      sprite: {
+        files: ['<%= pkg.root %>/img/sprite/*'],
+        tasks: ['sprite:couromoda']
+      }
 
       livereload: {
         files: [
           '*.php',
           '*.html',
           '<%= pkg.root %>/css/*.min.css',
-          '<%= pkg.root %>/js/**/*.min.js'
+          '<%= pkg.root %>/js/**/*.min.js',
+          '<%= pkg.root %>/img/**/*.{png,jpg,gif}',
         ],
         options: {
           livereload: true
@@ -103,9 +111,11 @@ module.exports = function(grunt) {
 
   });
 
+
   // Default tasks
   grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
   grunt.registerTask('setup', ['shell', 'build']);
   grunt.registerTask('serve', ['connect', 'watch']);
+
   grunt.registerTask('default', ['setup', 'serve']);
 };
