@@ -14,6 +14,17 @@ module.exports = function(grunt) {
       }
     },
 
+    // Copy
+    copy: {
+      libs: {
+        nonull: true,
+        expand: true,
+        flatten: true,
+        src: ['bower_components/html5shiv/dist/html5shiv.min.js', 'bower_components/respond/dest/respond.min.js'],
+        dest: '<%= pkg.root %>/js/libs/'
+      }
+    },
+
 
     // Serve
     connect: {
@@ -129,7 +140,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['less:basic', 'newer:autoprefixer:basic', 'csso:basic']);
 
   grunt.registerTask('build', ['sprite', 'css', 'javascript']);
-  grunt.registerTask('setup', ['shell', 'build']);
+  grunt.registerTask('setup', ['shell', 'copy:libs', 'build']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
   grunt.registerTask('default', ['setup', 'serve']);

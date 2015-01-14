@@ -6,3 +6,6 @@ node_modules
 
 img/sprite.png
 less/_sprite.less
+
+js/libs/html5shiv.min.js
+js/libs/respond.min.js
