@@ -20,7 +20,9 @@ module.exports = function(grunt) {
         options: {
           base: ['<%= pkg.root %>'],
           livereload: true,
-          open: true
+          open: {
+            target: 'http://localhost:8000'
+          }
         }
       }
     },
