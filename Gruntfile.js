@@ -47,8 +47,7 @@ module.exports = function(grunt) {
         dest: '<%= pkg.root %>/css/'
       }
     },
-
-    cssmin: {
+    csso: {
       basic: {
         expand: true,
         cwd: '<%= pkg.root %>/css/',
@@ -113,7 +112,10 @@ module.exports = function(grunt) {
 
 
   // Default tasks
-  grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
+  grunt.registerTask('javascript', ['includereplace:basic', 'newer:uglify:basic']);
+  grunt.registerTask('css', ['less:basic', 'newer:autoprefixer:basic', 'csso:basic']);
+
+  grunt.registerTask('build', ['css', 'javascript']);
   grunt.registerTask('setup', ['shell', 'build']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
