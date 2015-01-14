@@ -18,18 +18,18 @@ module.exports = function(grunt) {
     autoprefixer: {
       basic: {
         expand: true,
-        cwd: 'css/',
+        cwd: '<%= pkg.root %>/css/',
         src: '*.css',
-        dest: 'css/'
+        dest: '<%= pkg.root %>/css/'
       }
     },
 
     cssmin: {
       basic: {
         expand: true,
-        cwd: 'css/',
+        cwd: '<%= pkg.root %>/css/',
         src: ['*.css', '!*.min.css'],
-        dest: 'css/',
+        dest: '<%= pkg.root %>/css/',
         ext: '.min.css'
       }
     },
@@ -37,9 +37,9 @@ module.exports = function(grunt) {
     less: {
       basic: {
         expand: true,
-        cwd: 'less/',
+        cwd: '<%= pkg.root %>/less/',
         src: ['**/*.less', '!**/_*.less'],
-        dest: 'css/',
+        dest: '<%= pkg.root %>/css/',
         ext: '.css'
       }
     },
@@ -51,14 +51,14 @@ module.exports = function(grunt) {
       },
       basic: {
         files: {
-          'js/default.js': ['js/default.dist.js']
+          '<%= pkg.root %>/js/default.js': ['<%= pkg.root %>/js/default.dist.js']
         }
       }
     },
     uglify: {
       basic: {
         files: {
-          'js/default.min.js': ['js/default.js']
+          '<%= pkg.root %>/js/default.min.js': ['<%= pkg.root %>/js/default.js']
         }
       }
     },
@@ -66,12 +66,12 @@ module.exports = function(grunt) {
     // watching
     watch: {
       less: {
-        files: ['less/*.less'],
+        files: ['<%= pkg.root %>/less/*.less'],
         tasks: ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic']
       },
 
       js: {
-        files: ['js/*.dist.js', 'js/_*.js'],
+        files: ['<%= pkg.root %>/js/*.dist.js', '<%= pkg.root %>/js/_*.js'],
         tasks: ['newer:includereplace:basic', 'newer:uglify:basic']
       },
 
@@ -79,8 +79,8 @@ module.exports = function(grunt) {
         files: [
           '*.php',
           '*.html',
-          'css/*.min.css',
-          'js/**/*.min.js'
+          '<%= pkg.root %>/css/*.min.css',
+          '<%= pkg.root %>/js/**/*.min.js'
         ],
         options: {
           livereload: true
