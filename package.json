@@ -13,6 +13,7 @@
     "grunt-include-replace": "latest",
     "grunt-newer": "latest",
     "grunt-shell": "latest",
+    "grunt-spritesmith": "latest",
     "load-grunt-tasks": "latest"
   }
 }

@@ -77,6 +77,19 @@ module.exports = function(grunt) {
       }
     },
 
+
+    // Spriting
+    sprite: {
+      basic: {
+        'src': ['<%= pkg.root %>/img/sprite/*.png'],
+        'dest': '<%= pkg.root %>/img/sprite.png',
+        'destCss': '<%= pkg.root %>/less/_sprite.less',
+        'imgPath': '../img/sprite.png?' + (new Date().getTime())
+      }
+    },
+
+
+
     // Watching
     watch: {
       less: {
@@ -91,8 +104,8 @@ module.exports = function(grunt) {
 
       sprite: {
         files: ['<%= pkg.root %>/img/sprite/*'],
-        tasks: ['sprite:couromoda']
-      }
+        tasks: ['sprite']
+      },
 
       livereload: {
         files: [
@@ -115,7 +128,7 @@ module.exports = function(grunt) {
   grunt.registerTask('javascript', ['includereplace:basic', 'newer:uglify:basic']);
   grunt.registerTask('css', ['less:basic', 'newer:autoprefixer:basic', 'csso:basic']);
 
-  grunt.registerTask('build', ['css', 'javascript']);
+  grunt.registerTask('build', ['sprite', 'css', 'javascript']);
   grunt.registerTask('setup', ['shell', 'build']);
   grunt.registerTask('serve', ['connect', 'watch']);
 

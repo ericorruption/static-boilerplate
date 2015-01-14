@@ -3,3 +3,6 @@ js/default.js
 js/default.min.js
 bower_components
 node_modules
+
+img/sprite.png
+less/_sprite.less
