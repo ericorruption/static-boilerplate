@@ -5,6 +5,7 @@
   "devDependencies": {
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
+    "grunt-contrib-connect": "latest",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",

@@ -14,6 +14,17 @@ module.exports = function(grunt) {
       }
     },
 
+    // SERVE
+    connect: {
+      dev: {
+        options: {
+          base: ['<%= pkg.root %>'],
+          livereload: true,
+          open: true
+        }
+      }
+    },
+
     // LESS / CSS
     autoprefixer: {
       basic: {
@@ -91,7 +102,8 @@ module.exports = function(grunt) {
   });
 
   // Default tasks
-  grunt.registerTask('default', ['build', 'watch']);
-
-  grunt.registerTask('build', ['shell', 'less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
+  grunt.registerTask('build', ['less:basic', 'newer:autoprefixer:basic', 'cssmin:basic', 'includereplace:basic', 'newer:uglify:basic']);
+  grunt.registerTask('setup', ['shell', 'build']);
+  grunt.registerTask('serve', ['connect', 'watch']);
+  grunt.registerTask('default', ['setup', 'serve']);
 };
