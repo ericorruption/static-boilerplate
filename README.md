@@ -2,41 +2,38 @@
 This is how I roll. To get started:
 
 * Install node
-* Install grunt-cli
-* Install bower
 * `npm install`
-* `grunt`
-* Update jQuery reference if necessary
+* `gulp setup`
+* `gulp serve`
+* Update jQuery CDN reference if necessary
 * Have fun!
 
 
-## Available Grunt tasks
-All tasks are executed writing `grunt [taskname]` on terminal. `grunt` triggers
+## Available Gulp tasks
+All tasks are executed writing `gulp [taskname]` on terminal. `gulp` triggers
 the default task.
 
 * `javascript`: concatenate and minify js
 * `css`: compile less and minify css
-* `build`: generate sprites and trigger the two tasks above
-* `setup`: install dependencies and trigger `build`
+* `copy-libs`: update Bower packages and copy some libs to `js/libs` folder
+* `setup`: install dependencies and trigger `css` + `javascript`
 * `serve`: start static webserver, watch and reload changes on files
-* `default`: setup + serve
+* `default`: `serve` shortcut
 
 
 ## TODO
-* grunt deploy task
 * improve docs, obviously.
+* add spritesmith, jscs
 
-
-## Grunt plugins and their purpose
+## Gulp plugins and their purpose
 * autoprefixer: vendor-prefix CSS
-* connect: static server
-* copy: copy to dist folder
+* csso: css optimizer / minifier
+* file-include: pull js partials into other js files
 * less: compile LESS
 * uglify: compile JS
-* watch: watch for file changes
-* csso: css optimizer / minifier
-* include-replace: pull js partials into other js files
-* newer: only run task on changed files
-* shell: call bower
-* spritesmith: generate sprites
-* load-grunt-tasks: programatically load tasks
+* shell: use shell commands inside node. Used to `bower update`
+* rename: rename files on stream
+* plumber: prevent errors from terminating file watching
+* load-plugins: programatically load plugins
+* browser-sync: webserver, cross browser, cross device testing and file watcher / reloader
+

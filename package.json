@@ -1,20 +1,18 @@
 {
   "name": "my-project-name",
   "version": "0.1.0",
-  "root": ".",
+  "cwd": "./",
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-contrib-connect": "latest",
-    "grunt-contrib-copy": "latest",
-    "grunt-contrib-less": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-csso": "latest",
-    "grunt-include-replace": "latest",
-    "grunt-newer": "latest",
-    "grunt-shell": "latest",
-    "grunt-spritesmith": "latest",
-    "load-grunt-tasks": "latest"
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-csso": "latest",
+    "gulp-file-include": "latest",
+    "gulp-less": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-shell": "latest",
+    "gulp-uglify": "latest",
   }
 }
