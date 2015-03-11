@@ -3,9 +3,8 @@ This is how I roll. To get started:
 
 * Install node
 * `npm install`
-* `gulp setup`
-* `gulp serve`
-* Update jQuery CDN reference if necessary
+* `gulp`
+* Update CDN references if necessary
 * Have fun!
 
 
@@ -15,8 +14,6 @@ the default task.
 
 * `javascript`: concatenate and minify js
 * `css`: compile less and minify css
-* `copy-libs`: update Bower packages and copy some libs to `js/libs` folder
-* `setup`: install dependencies and trigger `css` + `javascript`
 * `serve`: start static webserver, watch and reload changes on files
 * `default`: `serve` shortcut
 
@@ -31,9 +28,10 @@ the default task.
 * file-include: pull js partials into other js files
 * less: compile LESS
 * uglify: compile JS
-* shell: use shell commands inside node. Used to `bower update`
 * rename: rename files on stream
 * plumber: prevent errors from terminating file watching
 * load-plugins: programatically load plugins
 * browser-sync: webserver, cross browser, cross device testing and file watcher / reloader
 
+* spritesmith: generate sprites
+* jscs: enforce coding style on JS

@@ -12,7 +12,13 @@
     "gulp-load-plugins": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
-    "gulp-shell": "latest",
     "gulp-uglify": "latest",
+    "jscs": "latest",
+    "spritesmith": "latest",
+
+    "bootstrap": "latest",
+    "fastclick": "latest",
+    "font-awesome": "latest",
+    "normalize.css": "latest"
   }
 }

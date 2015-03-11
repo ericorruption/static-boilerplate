@@ -1,4 +1,6 @@
 // You can put related scripts in here
+// @@include('../node_modules/fastclick/lib/fastclick.js');
+
 
 // Track JavaScript errors in Google Analytics
 (function(window){
