@@ -4,9 +4,7 @@
   "dependencies": {
     "bootstrap": "latest",
     "html5-boilerplate": "latest",
-    "html5shiv": "latest",
-    "normalize-css": "latest",
-    "respond": "latest"
+    "normalize-css": "latest"
   },
   "private": true,
   "ignore": [
