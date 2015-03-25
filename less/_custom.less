@@ -45,6 +45,10 @@ a{
   &:hover{
     .opacity(.3);
   }
+
+  &:focus{
+
+  }
 }
 
 // default full width column
@@ -54,16 +58,18 @@ a{
   max-width: 58.75em; // 940px
 }
 
-.logo {
-  &:extend(.ir all);
-  display: block;
-  background: url(http://placehold.it/150x90&text=mobile) no-repeat 0 0;
-  width: 150px;
-  height: 90px;
-}
-
 .goto-content {
   &:extend(.visuallyhidden);
+
+  &:focus{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+    clip: auto;
+    padding: 1em 1.2em;
+  }
 }
 
 .main-content {
@@ -72,29 +78,4 @@ a{
 
 h1{
   .font-size(42px);
-}
-
-/******************************************************************************/
-/* Other */
-/******************************************************************************/
-
-// Using media queries
-@media (min-width: 600px) {
-  .logo{
-    background-image: url(http://placehold.it/150x90&text=tablet);
-  }
-}
-
-@media (min-width: 960px) {
-  .logo{
-    background-image: url(http://placehold.it/150x90&text=desktop);
-  }
-}
-
-// oldIE classes
-// target lowerThan-ieVersion classes.
-.lt-ie10, .lt-ie9{
-  .logo{
-    background-image: url(http://placehold.it/150x90&text=iexplorer);
-  }
 }
