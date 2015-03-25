@@ -16,10 +16,8 @@ gulp.task('javascript', function() {
         .pipe(plugins.fileInclude({
             prefix: '// @@',
         }))
-        .pipe(plugins.rename(function(path) {
-            var currName = path.basename;
-            path.basename = currName.substr(0, currName.length - 5)
-        }))
+        .pipe(plugins.rename({ extname: '' }))
+        .pipe(plugins.rename({ extname: '.js' }))
         .pipe(gulp.dest(config.cwd + 'js'))
         .pipe(plugins.uglify())
         .pipe(plugins.rename({ extname: '.min.js' }))
