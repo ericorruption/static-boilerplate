@@ -1,19 +1,17 @@
 {
-  "name": "my-project-name",
+  "name": "static-boilerplate",
   "version": "0.1.0",
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "latest",
-    "gulp-autoprefixer": "latest",
     "gulp-less": "latest",
     "gulp-load-plugins": "latest",
     "gulp-minify-css": "latest",
     "gulp-plumber": "latest",
-    "gulp-rename": "latest",
+    "gulp-postcss": "latest",
+    "autoprefixer": "latest",
+    "cssgrace": "latest",
     "webpack": "latest",
-    "jscs": "latest",
-    "spritesmith": "latest",
-
     "bootstrap": "latest",
     "fastclick": "latest",
     "font-awesome": "latest",

@@ -27,10 +27,11 @@ gulp.task('css', function() {
     return gulp.src(['less/*.less', '!less/_*.less'])
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.less())
-        .pipe(plugins.autoprefixer())
-        .pipe(gulp.dest(config.cwd + 'css'))
+        .pipe(plugins.postcss([
+            require('autoprefixer'),
+            require('cssgrace')
+        ]))
         .pipe(plugins.minifyCss())
-        .pipe(plugins.rename({ extname: '.min.css' }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.stream());
 });

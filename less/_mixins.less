@@ -59,17 +59,6 @@
   font-size: unit(@rem, rem);
 }
 
-.opacity(@value) {
-  @ie-value: @value * 100;
-
-  opacity: @value;
-  filter: alpha(opacity=@ie-value);
-}
-
-.transition(@params: all 0.3s ease-out) {
-  transition: @params;
-}
-
 /*
  * Image replacement (does not work on buttons/inputs)
  */
