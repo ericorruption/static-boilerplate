@@ -1,6 +1,6 @@
 var gulp        = require('gulp'),
     plugins     = require('gulp-load-plugins')(),
-    browserSync = require('browser-sync'),
+    browserSync = require('browser-sync').create(),
     reload      = browserSync.reload,
     config = require('./package.json');
 
@@ -37,7 +37,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('serve', ['build'], function() {
-    browserSync({
+    browserSync.init({
         // using vagrant or other server:
         // proxy: "http://localhost:8000"
         // or use builtin server:
