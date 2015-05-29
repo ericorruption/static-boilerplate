@@ -3,6 +3,7 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync').create(),
     reload      = browserSync.reload,
     config = require('./package.json');
+    webpack     = require('webpack');
 
 // error function for plumber
 var onError = function (err) {
@@ -11,17 +12,16 @@ var onError = function (err) {
 };
 
 gulp.task('javascript', function() {
-    return gulp.src([config.cwd + 'js/*.dist.js'])
-        .pipe(plugins.plumber({ errorHandler: onError }))
-        .pipe(plugins.fileInclude({
-            prefix: '// @@',
-        }))
-        .pipe(plugins.rename({ extname: '' }))
-        .pipe(plugins.rename({ extname: '.js' }))
-        .pipe(gulp.dest(config.cwd + 'js'))
-        .pipe(plugins.uglify())
-        .pipe(plugins.rename({ extname: '.min.js' }))
-        .pipe(gulp.dest(config.cwd + 'js'));
+    webpack({
+        entry: "./js/main.js",
+        output: {
+            filename: "./js/bundle.js"
+        },
+        plugins: [
+            new webpack.optimize.UglifyJsPlugin({ output: { comments: false }})
+        ]
+    }, function () {
+    });
 });
 
 gulp.task('css', function() {

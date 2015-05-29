@@ -1,8 +1,6 @@
 node_modules
-
 css
-js/default.js
-js/default.min.js
+bundle.js
 
 img/sprite.png
 less/_sprite.less
