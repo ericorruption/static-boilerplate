@@ -1,7 +1,6 @@
 var gulp        = require('gulp'),
     plugins     = require('gulp-load-plugins')(),
     browserSync = require('browser-sync').create(),
-    config = require('./package.json');
     webpack     = require('webpack');
 
 // error function for plumber
@@ -25,14 +24,14 @@ gulp.task('javascript', function() {
 });
 
 gulp.task('css', function() {
-    return gulp.src([config.cwd + 'less/*.less', '!' + config.cwd + 'less/_*.less'])
+    return gulp.src(['less/*.less', '!less/_*.less'])
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.less())
         .pipe(plugins.autoprefixer())
         .pipe(gulp.dest(config.cwd + 'css'))
         .pipe(plugins.minifyCss())
         .pipe(plugins.rename({ extname: '.min.css' }))
-        .pipe(gulp.dest(config.cwd + 'css'))
+        .pipe(gulp.dest('css'))
         .pipe(browserSync.stream());
 });
 
@@ -41,11 +40,11 @@ gulp.task('serve', ['build'], function() {
         // using vagrant or other server:
         // proxy: "http://localhost:8000"
         // or use builtin server:
-        server: config.cwd
+        server: '.',
+        files: ['**/*.html']
     });
 
-    gulp.watch([config.cwd + 'less/**/*.less'], ['css']);
-    gulp.watch([config.cwd + '**/*.html'], reload);
+    gulp.watch(['less/**/*.less'], ['css']);
     gulp.watch(['js/**/*.js', '!js/bundle.js'], ['javascript']);
 });
 
