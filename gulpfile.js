@@ -1,7 +1,6 @@
 var gulp        = require('gulp'),
     plugins     = require('gulp-load-plugins')(),
     browserSync = require('browser-sync').create(),
-    reload      = browserSync.reload,
     config = require('./package.json');
     webpack     = require('webpack');
 
@@ -21,6 +20,7 @@ gulp.task('javascript', function() {
             new webpack.optimize.UglifyJsPlugin({ output: { comments: false }})
         ]
     }, function () {
+        browserSync.reload();
     });
 });
 
@@ -33,7 +33,7 @@ gulp.task('css', function() {
         .pipe(plugins.minifyCss())
         .pipe(plugins.rename({ extname: '.min.css' }))
         .pipe(gulp.dest(config.cwd + 'css'))
-        .pipe(reload({stream: true}));
+        .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['build'], function() {
@@ -45,8 +45,8 @@ gulp.task('serve', ['build'], function() {
     });
 
     gulp.watch([config.cwd + 'less/**/*.less'], ['css']);
-    gulp.watch([config.cwd + 'js/**/*.dist.js', config.cwd + 'js/**/_*.js'], ['javascript', reload]);
     gulp.watch([config.cwd + '**/*.html'], reload);
+    gulp.watch(['js/**/*.js', '!js/bundle.js'], ['javascript']);
 });
 
 gulp.task('build', ['css', 'javascript']);
