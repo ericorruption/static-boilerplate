@@ -14,7 +14,6 @@
     "webpack": "latest",
     "bootstrap": "latest",
     "fastclick": "latest",
-    "font-awesome": "latest",
     "normalize.css": "latest"
   }
 }
