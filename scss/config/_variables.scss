@@ -1,15 +1,16 @@
 // Colors
-@brand-primary:    #252128;
+$brand-primary:    #252128;
 
 // Objects
-@text-color:       #222;
-@link-color:       @brand-primary;
-@link-hover-color: darken(@link-color, 10%);
+$text-color:       #222;
+$link-color:       $brand-primary;
+$link-hover-color: darken($link-color, 10%);
 
-@selection-bg-color: @link-color;
-@selection-text-color: @text-color;
+$selection-bg-color: $link-color;
+$selection-text-color: $text-color;
 
 // Typography
-@font-family-base: sans-serif;
+$font-family-base: sans-serif;
 
-@icon-font-path: 'node_modules/bootstrap/fonts/';
+// If you're using glyphicons:
+// $icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';

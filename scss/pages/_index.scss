@@ -3,32 +3,25 @@
 // ****************************************************************************/
 
 // Input placeholder text color. In case you want to change the browser default.
-// .placeholder-color(#333);
+// @include placeholder-color(#333);
 
 // @font-face mixin. Values: @font-name, @font-path, @weight, @style.
-// .font-face(Louis, '../fonts/louisbold-webfont');
+// @include font-face(Louis, '../fonts/louisbold-webfont');
 
 // REM font-sizes. Pixel values will be converted to REM, with pixel fallback.
-//.font-size();
-
-// Image replacement. Set a background image, width, height
-// and display block or inline-block for the element.
-//.ir all;
-
-// Hide visually, but let available for screenreaders.
-//.visuallyhidden;
+// @include font-size();
 
 /******************************************************************************/
 /* Examples */
 /******************************************************************************/
 
 // default full width column
-.content-block {
+%content-block {
   margin: 0 auto;
   padding: 0 2%;
   max-width: 58.75em; // 940px
 }
 
 .main-content {
-  &:extend(.content-block);
+  @extend %content-block;
 }

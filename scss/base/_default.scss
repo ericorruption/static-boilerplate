@@ -5,9 +5,9 @@
 }
 
 ::selection {
-  background: @selection-bg-color;
+  background: $selection-bg-color;
   text-shadow: none;
-  color: @selection-text-color;
+  color: $selection-text-color;
 }
 
 html,
@@ -16,8 +16,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: @font-family-base;
-  color: @text-color;
+  font-family: $font-family-base;
+  color: $text-color;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -31,7 +31,7 @@ html {
 }
 
 legend {
-  &:extend(.visuallyhidden);
+  @extend %visuallyhidden;
 }
 
 audio,
@@ -62,11 +62,11 @@ img {
 }
 
 a {
-  color: @link-color;
+  color: $link-color;
 
   &:hover,
   &:focus {
-    color: @link-hover-color;
+    color: $link-hover-color;
   }
 }
 

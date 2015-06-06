@@ -1,21 +1,22 @@
 @import 'normalize.css';
 
 // Using bootstrap? Uncomment the lines below.
-// @import 'vendor/_bootstrap.less';
+// @import 'vendor/bootstrap';
 
 // Variables partial. To override bootstrap's or use your own variables.
-@import "config/_variables.less";
+@import "config/variables";
 
 // Default partials. Don't mess with these!
-@import "config/_mixins.less";
-@import "base/_default.less";
+@import "config/mixins";
+@import "base/default";
 
 // From now on, free territory. Use as much partials as necessary.
 // Write only @import's here.
 
-@import "components/_goto-content.less";
-@import "pages/_index.less";
+@import "base/links";
 
+@import "components/goto-content";
+@import "pages/index";
 
 // Print styles. Have to stay on bottom of stylesheet.
-@import "base/_print.less";
+@import "base/print";
