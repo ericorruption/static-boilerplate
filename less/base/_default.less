@@ -1,3 +1,15 @@
+// These should have the same values as the meta viewport tag.
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+::selection {
+  background: @selection-bg-color;
+  text-shadow: none;
+  color: @selection-text-color;
+}
+
 html,
 button,
 input,
@@ -18,7 +30,7 @@ html {
   box-sizing: inherit;
 }
 
-legend{
+legend {
   &:extend(.visuallyhidden);
 }
 
@@ -37,22 +49,23 @@ fieldset {
   padding: 0;
 }
 
-textarea{
+textarea {
   resize: vertical;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
-a{
+a {
   color: @link-color;
 
-  &:hover{
+  &:hover,
+  &:focus {
     color: @link-hover-color;
   }
 }

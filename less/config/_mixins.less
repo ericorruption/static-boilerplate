@@ -12,32 +12,6 @@
   }
 }
 
-.viewport(@width: device-width, @zoom: 1.0){
-  @-ms-viewport {
-    width: @width;
-    zoom: @zoom;
-  }
-
-  @viewport {
-    width: @width;
-    zoom: @zoom;
-  }
-}
-
-.selection(@bg-color: @link-color, @text-color: @text-color){
-  ::-moz-selection {
-    background: @bg-color;
-    text-shadow: none;
-    color: @text-color;
-  }
-
-  ::selection {
-    background: @bg-color;
-    text-shadow: none;
-    color: @text-color;
-  }
-}
-
 .placeholder-color(@text-color){
   &:-ms-input-placeholder{
     color: @text-color;

@@ -1,23 +1,12 @@
-/******************************************************************************/
-/* Universal Mixins */
-/******************************************************************************/
-
-// Viewport. Defaults: (@width: device-width, @zoom: 1.0)
-// These should have the same values as the meta viewport tag.
-.viewport;
-
-// Selection. Defaults: (@bg-color: @link-color, @text-color: @text-color)
-.selection;
+// ****************************************************************************/
+// Mixins
+// ****************************************************************************/
 
 // Input placeholder text color. In case you want to change the browser default.
 // .placeholder-color(#333);
 
 // @font-face mixin. Values: @font-name, @font-path, @weight, @style.
 // .font-face(Louis, '../fonts/louisbold-webfont');
-
-// ****************************************************************************/
-// In-class Mixins, extendable */
-// ****************************************************************************/
 
 // REM font-sizes. Pixel values will be converted to REM, with pixel fallback.
 //.font-size();
@@ -29,27 +18,9 @@
 // Hide visually, but let available for screenreaders.
 //.visuallyhidden;
 
-// CSS transitions. Default: all 0.3s ease-out;
-//.transition;
-
-// Cross browser opacity. Use values between 0 and 1.
-//.opacity(.5);
-
 /******************************************************************************/
 /* Examples */
 /******************************************************************************/
-
-a{
-  transition: all .2s ease-out;
-
-  &:hover{
-    opacity: .3;
-  }
-
-  &:focus{
-
-  }
-}
 
 // default full width column
 .content-block {
@@ -58,24 +29,6 @@ a{
   max-width: 58.75em; // 940px
 }
 
-.goto-content {
-  &:extend(.visuallyhidden);
-
-  &:focus{
-    display: inline-block;
-    width: auto;
-    height: auto;
-    left: 0;
-    top: 0;
-    clip: auto;
-    padding: 1em 1.2em;
-  }
-}
-
 .main-content {
   &:extend(.content-block);
-}
-
-h1{
-  .font-size(42px);
 }
