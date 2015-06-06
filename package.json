@@ -4,7 +4,7 @@
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "latest",
-    "gulp-less": "latest",
+    "gulp-sass": "latest",
     "gulp-load-plugins": "latest",
     "gulp-minify-css": "latest",
     "gulp-plumber": "latest",
@@ -13,7 +13,7 @@
     "cssgrace": "latest",
     "postcss-import": "latest",
     "webpack": "latest",
-    "bootstrap": "latest",
+    "bootstrap-sass": "latest",
     "fastclick": "latest",
     "normalize.css": "latest"
   }

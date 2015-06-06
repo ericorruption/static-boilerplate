@@ -24,9 +24,9 @@ gulp.task('javascript', function() {
 });
 
 gulp.task('css', function() {
-    return gulp.src(['less/*.less', '!less/_*.less'])
+    return gulp.src(['scss/*.scss', '!scss/_*.scss'])
         .pipe(plugins.plumber({ errorHandler: onError }))
-        .pipe(plugins.less())
+        .pipe(plugins.sass())
         .pipe(plugins.postcss([
             require('autoprefixer'),
             require('cssgrace'),
@@ -46,7 +46,7 @@ gulp.task('serve', ['build'], function() {
         files: ['**/*.html']
     });
 
-    gulp.watch(['less/**/*.less'], ['css']);
+    gulp.watch(['scss/**/*.scss'], ['css']);
     gulp.watch(['js/**/*.js', '!js/bundle.js'], ['javascript']);
 });
 
