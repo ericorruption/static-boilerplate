@@ -29,7 +29,8 @@ gulp.task('css', function() {
         .pipe(plugins.less())
         .pipe(plugins.postcss([
             require('autoprefixer'),
-            require('cssgrace')
+            require('cssgrace'),
+            require('postcss-import'),
         ]))
         .pipe(plugins.minifyCss())
         .pipe(gulp.dest('css'))

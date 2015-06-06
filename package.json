@@ -11,6 +11,7 @@
     "gulp-postcss": "latest",
     "autoprefixer": "latest",
     "cssgrace": "latest",
+    "postcss-import": "latest",
     "webpack": "latest",
     "bootstrap": "latest",
     "fastclick": "latest",
