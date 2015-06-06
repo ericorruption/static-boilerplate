@@ -30,7 +30,6 @@
      * Don't show links for images, or javascript/internal links
      */
 
-    .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
         content: "";
@@ -67,7 +66,10 @@
         page-break-after: avoid;
     }
 
-    .main-header *, .main-nav, .main-footer, aside {
+    .main-header *,
+    .main-nav,
+    .main-footer,
+    aside {
         display: none !important;
     }
 
@@ -75,7 +77,9 @@
         display: block !important;
     }
 
-    body, article, main {
+    body,
+    article,
+    main {
         width: 100%;
         margin: 0;
         padding: 0;
