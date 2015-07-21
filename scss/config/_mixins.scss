@@ -30,7 +30,7 @@
   $rem: $size / 16;
 
   font-size: $size;
-  font-size: unit($rem, rem);
+  font-size: $rem / ($rem * 0 + 1) + rem;
 }
 
 /*
