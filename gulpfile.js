@@ -11,9 +11,9 @@ var onError = function (err) {
 
 gulp.task('javascript', function() {
     webpack({
-        entry: "./js/main.js",
+        entry: "src/js/main.js",
         output: {
-            filename: "./js/bundle.js"
+            filename: "dist/js/bundle.js"
         },
         plugins: [
             new webpack.optimize.UglifyJsPlugin({ output: { comments: false }})
@@ -24,7 +24,7 @@ gulp.task('javascript', function() {
 });
 
 gulp.task('css', function() {
-    return gulp.src(['scss/*.scss', '!scss/_*.scss'])
+    return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.sass())
         .pipe(plugins.postcss([
@@ -33,7 +33,7 @@ gulp.task('css', function() {
             require('postcss-import'),
         ]))
         .pipe(plugins.minifyCss())
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
 
@@ -46,8 +46,8 @@ gulp.task('serve', ['build'], function() {
         files: ['**/*.html']
     });
 
-    gulp.watch(['scss/**/*.scss'], ['css']);
-    gulp.watch(['js/**/*.js', '!js/bundle.js'], ['javascript']);
+    gulp.watch(['src/scss/**/*.scss'], ['css']);
+    gulp.watch(['src/js/**/*.js'], ['javascript']);
 });
 
 gulp.task('build', ['css', 'javascript']);
