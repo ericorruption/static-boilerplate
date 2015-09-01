@@ -20,18 +20,18 @@ the default task.
 
 ## TODO
 * improve docs, obviously.
-* add spritesmith, jscs
+* add spritesmith / svg sprite solution, jscs
 
 ## Gulp plugins and their purpose
 * autoprefixer: vendor-prefix CSS
-* csso: css optimizer / minifier
+* minify-css: css optimizer / minifier
 * file-include: pull js partials into other js files
-* less: compile LESS
-* uglify: compile JS
-* rename: rename files on stream
+* sass: compile Sass
 * plumber: prevent errors from terminating file watching
 * load-plugins: programatically load plugins
 * browser-sync: webserver, cross browser, cross device testing and file watcher / reloader
+* cssgrace: oldIE fallbacks like opacity and rgba support.
+* postcss-import: import css files into sass
+* webpack: bundle js modules
 
-* spritesmith: generate sprites
 * jscs: enforce coding style on JS
