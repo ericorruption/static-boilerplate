@@ -9,7 +9,7 @@
     "gulp-minify-css": "latest",
     "gulp-plumber": "latest",
     "gulp-postcss": "latest",
-    "autoprefixer": "latest",
+    "autoprefixer-core": "latest",
     "cssgrace": "latest",
     "postcss-import": "latest",
     "webpack": "latest",

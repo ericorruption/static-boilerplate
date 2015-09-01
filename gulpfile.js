@@ -28,7 +28,7 @@ gulp.task('css', function() {
         .pipe(plugins.plumber({ errorHandler: onError }))
         .pipe(plugins.sass())
         .pipe(plugins.postcss([
-            require('autoprefixer'),
+            require('autoprefixer-core'),
             require('cssgrace'),
             require('postcss-import'),
         ]))
