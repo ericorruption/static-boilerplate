@@ -11,9 +11,9 @@ var onError = function (err) {
 
 gulp.task('javascript', function() {
     webpack({
-        entry: "src/js/main.js",
+        entry: "./src/js/main.js",
         output: {
-            filename: "dist/js/bundle.js"
+            filename: "./dist/js/bundle.js"
         },
         plugins: [
             new webpack.optimize.UglifyJsPlugin({ output: { comments: false }})
