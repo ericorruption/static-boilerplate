@@ -37,6 +37,12 @@ gulp.task('css', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('images', function () {
+    return gulp.src('src/img/**/*')
+        .pipe(plugins.imagemin())
+        .pipe(gulp.dest('dist/img'));
+});
+
 gulp.task('serve', ['build'], function() {
     browserSync.init({
         // using vagrant or other server:
@@ -46,9 +52,10 @@ gulp.task('serve', ['build'], function() {
         files: ['**/*.html']
     });
 
+    gulp.watch(['src/img/**/*'], ['images']);
     gulp.watch(['src/scss/**/*.scss'], ['css']);
     gulp.watch(['src/js/**/*.js'], ['javascript']);
 });
 
-gulp.task('build', ['css', 'javascript']);
+gulp.task('build', ['css', 'javascript', 'images']);
 gulp.task('default', ['serve']);

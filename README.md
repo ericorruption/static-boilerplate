@@ -20,7 +20,14 @@ the default task.
 
 ## TODO
 * improve docs, obviously.
-* add spritesmith / svg sprite solution, jscs
+* add spritesmith / svg sprite solution
+* enforce html / css coding style
+* jscs: enforce coding style on JS
+* sourcemap support
+* understand the inner workings of webpack
+* static asset hashing
+* inline critical css
+* linting
 
 ## Gulp plugins and their purpose
 * autoprefixer: vendor-prefix CSS
@@ -33,5 +40,4 @@ the default task.
 * cssgrace: oldIE fallbacks like opacity and rgba support.
 * postcss-import: import css files into sass
 * webpack: bundle js modules
-
-* jscs: enforce coding style on JS
+* imagemin: optimize images
