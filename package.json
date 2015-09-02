@@ -10,6 +10,7 @@
     "gulp-plumber": "latest",
     "gulp-postcss": "latest",
     "gulp-imagemin": "latest",
+    "gulp-sourcemaps": "latest",
     "autoprefixer-core": "latest",
     "cssgrace": "latest",
     "postcss-import": "latest",

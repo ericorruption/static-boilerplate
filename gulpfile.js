@@ -26,6 +26,7 @@ gulp.task('javascript', function() {
 gulp.task('css', function() {
     return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
         .pipe(plugins.plumber({ errorHandler: onError }))
+        .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass())
         .pipe(plugins.postcss([
             require('autoprefixer-core'),
@@ -33,6 +34,7 @@ gulp.task('css', function() {
             require('postcss-import'),
         ]))
         .pipe(plugins.minifyCss())
+        .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });

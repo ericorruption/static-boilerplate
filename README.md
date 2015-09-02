@@ -23,7 +23,6 @@ the default task.
 * add spritesmith / svg sprite solution
 * enforce html / css coding style
 * jscs: enforce coding style on JS
-* sourcemap support
 * understand the inner workings of webpack
 * static asset hashing
 * inline critical css
@@ -32,7 +31,6 @@ the default task.
 ## Gulp plugins and their purpose
 * autoprefixer: vendor-prefix CSS
 * minify-css: css optimizer / minifier
-* file-include: pull js partials into other js files
 * sass: compile Sass
 * plumber: prevent errors from terminating file watching
 * load-plugins: programatically load plugins
@@ -41,3 +39,4 @@ the default task.
 * postcss-import: import css files into sass
 * webpack: bundle js modules
 * imagemin: optimize images
+* sourcempas: sourcemap support
