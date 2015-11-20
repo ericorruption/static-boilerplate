@@ -1,6 +1,9 @@
 {
   "name": "static-boilerplate",
   "version": "0.1.0",
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "latest",
