@@ -26,7 +26,8 @@ the default task.
 * understand the inner workings of webpack
 * static asset hashing
 * inline critical css
-* linting
+* linting (with eslint)
+* build for production (invalidate static assets, etc)
 
 ## Gulp plugins and their purpose
 * autoprefixer: vendor-prefix CSS
