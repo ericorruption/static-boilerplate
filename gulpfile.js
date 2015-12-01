@@ -45,19 +45,26 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('html', function () {
+    return gulp.src('src/**/*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('serve', ['build'], function() {
     browserSync.init({
         // using vagrant or other server:
         // proxy: "http://localhost:8000"
         // or use builtin server:
-        server: '.',
-        files: ['**/*.html']
+        server: './dist',
+        files: ['*.html']
     });
 
+    gulp.watch(['src/*.html'], ['html']);
     gulp.watch(['src/img/**/*'], ['images']);
     gulp.watch(['src/scss/**/*.scss'], ['css']);
     gulp.watch(['src/js/**/*.js'], ['javascript']);
 });
 
-gulp.task('build', ['css', 'javascript', 'images']);
+gulp.task('build', ['html', 'css', 'javascript', 'images']);
 gulp.task('default', ['serve']);

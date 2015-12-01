@@ -7,19 +7,20 @@
   "devDependencies": {
     "browser-sync": "latest",
     "gulp": "latest",
-    "gulp-sass": "latest",
     "gulp-load-plugins": "latest",
-    "gulp-minify-css": "latest",
     "gulp-plumber": "latest",
+    "gulp-sass": "latest",
     "gulp-postcss": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-sourcemaps": "latest",
     "cssgrace": "latest",
     "autoprefixer": "latest",
     "postcss-import": "latest",
+    "gulp-minify-css": "latest",
     "webpack": "latest",
-    "bootstrap-sass": "latest",
+    "gulp-eslint": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-imagemin": "latest",
     "fastclick": "latest",
-    "normalize.css": "latest"
+    "normalize.css": "latest",
+    "bootstrap-sass": "latest"
   }
 }
