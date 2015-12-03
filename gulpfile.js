@@ -1,7 +1,8 @@
 var gulp        = require('gulp'),
     plugins     = require('gulp-load-plugins')(),
     browserSync = require('browser-sync').create(),
-    webpack     = require('webpack');
+    webpack     = require('webpack'),
+    del         = require('del');
 
 // error function for plumber
 var onError = function(err) {
@@ -37,6 +38,23 @@ gulp.task('css', function() {
     .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
+});
+
+gulp.task('css:production', function() {
+  return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
+    .pipe(plugins.plumber({ errorHandler: onError }))
+    .pipe(plugins.sass())
+    .pipe(plugins.postcss([
+      require('autoprefixer'),
+      require('cssgrace'),
+      require('postcss-import')
+    ]))
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('clean', function() {
+  return del('dist/css');
 });
 
 gulp.task('images', function() {
@@ -94,4 +112,5 @@ gulp.task('serve', ['build'], function() {
 });
 
 gulp.task('build', ['html', 'css', 'javascript', 'images']);
+gulp.task('build:production', ['build', 'clean', 'css:production']);
 gulp.task('default', ['serve']);
