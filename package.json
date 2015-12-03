@@ -19,6 +19,7 @@
     "gulp-eslint": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-imagemin": "latest",
+    "gulp-minify-html": "latest",
     "fastclick": "latest",
     "normalize.css": "latest",
     "bootstrap-sass": "latest"
