@@ -3,30 +3,32 @@ This is how I roll. To get started:
 
 * Install node
 * `npm install`
-* `gulp`
+* `npm start`
 * Update CDN references if necessary
 * Have fun!
 
 
 ## Available Gulp tasks
 All tasks are executed writing `gulp [taskname]` on terminal. `gulp` triggers
-the default task.
+the default task. You can use the local instance of gulp acessing `node_modules/.bin/gulp`.
 
 * `javascript`: concatenate and minify js
 * `css`: compile less and minify css
+* `html`: minify html
+* `images`: optimize images
+* `build`: run all the tasks above
 * `serve`: start static webserver, watch and reload changes on files
 * `default`: `serve` shortcut
 
 
 ## TODO
 * improve docs, obviously.
-* add spritesmith / svg sprite solution
+* add svg sprite solution
 * enforce html / css coding style
-* jscs: enforce coding style on JS
+* eslint: enforce coding style and linting on JS
 * understand the inner workings of webpack
 * static asset hashing
 * inline critical css
-* linting (with eslint)
 * build for production (invalidate static assets, etc)
 
 ## Gulp plugins and their purpose
@@ -40,4 +42,5 @@ the default task.
 * postcss-import: import css files into sass
 * webpack: bundle js modules
 * imagemin: optimize images
-* sourcempas: sourcemap support
+* sourcemaps: sourcemap support
+* minify-html: squish html files
