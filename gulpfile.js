@@ -41,7 +41,10 @@ gulp.task('css', function() {
 
 gulp.task('images', function () {
     return gulp.src('src/img/**/*')
-        .pipe(plugins.imagemin())
+        .pipe(plugins.imagemin({
+          progressive: true,
+          interlaced: true
+        }))
         .pipe(gulp.dest('dist/img'));
 });
 
