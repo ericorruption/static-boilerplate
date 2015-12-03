@@ -45,10 +45,13 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('html', function () {
-    return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('dist/'))
-        .pipe(browserSync.stream());
+// copy other assets
+gulp.task('cp', function () {
+    return gulp.src([
+      'src/*']
+    )
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['build'], function() {
@@ -57,14 +60,14 @@ gulp.task('serve', ['build'], function() {
         // proxy: "http://localhost:8000"
         // or use builtin server:
         server: './dist',
-        files: ['*.html']
+        files: ['src/*.html']
     });
 
-    gulp.watch(['src/*.html'], ['html']);
+    gulp.watch(['src/*.html'], ['cp']);
     gulp.watch(['src/img/**/*'], ['images']);
     gulp.watch(['src/scss/**/*.scss'], ['css']);
     gulp.watch(['src/js/**/*.js'], ['javascript']);
 });
 
-gulp.task('build', ['html', 'css', 'javascript', 'images']);
+gulp.task('build', ['cp', 'css', 'javascript', 'images']);
 gulp.task('default', ['serve']);
