@@ -4,7 +4,7 @@ var gulp        = require('gulp'),
     webpack     = require('webpack');
 
 // error function for plumber
-var onError = function (err) {
+var onError = function(err) {
   console.log(err);
   this.emit('end');
 };
@@ -39,7 +39,7 @@ gulp.task('css', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('images', function () {
+gulp.task('images', function() {
     return gulp.src('src/img/**/*')
         .pipe(plugins.imagemin({
           progressive: true,
