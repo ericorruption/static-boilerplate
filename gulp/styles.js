@@ -11,7 +11,7 @@ var gulp        = require('gulp'),
       require('cssgrace'),
       require('postcss-import')
     ],
-    minifyCss   = require('gulp-minify-css');
+    minifyCss   = require('gulp-cssnano');
 
 // error function for plumber
 var onError = function(err) {

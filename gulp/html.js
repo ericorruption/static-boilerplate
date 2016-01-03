@@ -1,12 +1,12 @@
 'use strict';
 
 var gulp       = require('gulp'),
-    minifyHtml = require('gulp-minify-html');
+    minifyHtml = require('gulp-htmlmin');
 
 gulp.task('html', function() {
   return gulp.src('src/*.html')
     .pipe(minifyHtml({
-      conditionals: true
+      collapseWhitespace: true
     }))
     .pipe(gulp.dest('dist/'));
 });
