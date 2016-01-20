@@ -2,18 +2,17 @@
 
 var gulp        = require('gulp'),
     browserSync = require('browser-sync').get('static-boilerplate'),
-    webpack     = require('webpack');
+    browserify  = require('browserify'),
+    source      = require('vinyl-source-stream'),
+    buffer      = require('vinyl-buffer'),
+    uglify      = require('gulp-uglify');
 
 gulp.task('javascript', function() {
-  webpack({
-    entry: "./src/js/main.js",
-    output: {
-      filename: "./dist/js/bundle.js"
-    },
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({ output: { comments: false }})
-    ]
-  }, function () {
-    browserSync.reload();
-  });
+  return browserify('src/js/main.js')
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
 });
