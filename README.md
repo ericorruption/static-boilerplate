@@ -27,7 +27,6 @@ the default task. You can use the local instance of gulp acessing `node_modules/
 * add svg sprite solution
 * enforce html / css coding style
 * eslint: enforce coding style and linting on JS
-* understand the inner workings of webpack / maybe replace it with jspm
 * static asset hashing
 * inline critical css
 * build for production (invalidate static assets, etc)
@@ -41,7 +40,8 @@ the default task. You can use the local instance of gulp acessing `node_modules/
 * browser-sync: webserver, cross browser, cross device testing and file watcher / reloader
 * cssgrace: oldIE fallbacks like opacity and rgba support.
 * postcss-import: import css files into sass
-* webpack: bundle js modules
+* browserify (+ vinyl source stream and buffer): bundle js modules
+* uglify: minify js
 * imagemin: optimize images
 * sourcemaps: sourcemap support
 * htmlmin: squish html files
