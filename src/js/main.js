@@ -1,4 +1,6 @@
-require('./track-js-errors');
+'use strict';
+
+require('./track-js-errors')();
 
 (function ($) {
   'use strict';

@@ -1,5 +1,5 @@
 // Track JavaScript errors in Google Analytics
-module.exports = (function(window){
+module.exports = function(){
   var undefined,
       link = function (href) {
         var a = window.document.createElement('a');
@@ -17,4 +17,4 @@ module.exports = (function(window){
       'nonInteraction': 1
     });
   };
-}(window));
+};
