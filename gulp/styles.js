@@ -8,7 +8,6 @@ var gulp        = require('gulp'),
     postcss     = require('gulp-postcss'),
     cssPlugins  = [
       require('autoprefixer'),
-      require('cssgrace'),
       require('postcss-import')
     ],
     minifyCss   = require('gulp-cssnano');

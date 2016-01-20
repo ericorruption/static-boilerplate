@@ -7,7 +7,6 @@
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "browser-sync": "^2.11.1",
-    "cssgrace": "^3.0.0",
     "del": "^2.2.0",
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
