@@ -11,6 +11,10 @@ var gulp        = require('gulp'),
 gulp.task('javascript', function() {
   return browserify('src/js/main.js')
     .bundle()
+    .on('error', function(err) {
+      console.log(err);
+      this.emit("end");
+    })
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
