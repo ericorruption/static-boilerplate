@@ -8,7 +8,6 @@
     "autoprefixer": "^6.3.1",
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
-    "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-cssnano": "^2.1.0",
     "gulp-eslint": "^1.1.1",
