@@ -17,7 +17,7 @@ the default task. You can use the local instance of gulp acessing `node_modules/
 * `html`: minify html
 * `images`: optimize images
 * `build`: run all the tasks above
-* `build:production`: generate css without sourcemaps
+* `build:production`: generate assets without sourcemaps
 * `serve`: start static webserver, watch and reload changes on files
 * `default`: `serve` shortcut
 
