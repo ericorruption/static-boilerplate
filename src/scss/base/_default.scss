@@ -38,6 +38,14 @@ legend {
   @extend %visuallyhidden;
 }
 
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: $outline-color;
+}
+
 audio,
 canvas,
 iframe,
