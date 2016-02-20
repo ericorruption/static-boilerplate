@@ -1,26 +1,25 @@
 @import 'normalize.css';
 
-// Using bootstrap? Uncomment the lines below.
-// @import 'vendor/bootstrap';
-
 // Variables partial. To override bootstrap's or use your own variables.
-@import "config/variables";
+@import "1.config/variables";
 
 // Default partials. Don't mess with these!
-@import "config/mixins";
-@import "base/default";
+@import "1.config/mixins";
+@import "2.base/default";
 
 // From now on, free territory. Use as much partials as necessary.
 // Write only @import's here.
 
-@import "base/links";
+@import "2.base/links";
 
-@import "components/goto-content";
-@import "components/header";
-@import "components/nav";
-@import "components/footer";
+@import "3.objects/grid";
 
-@import "pages/index";
+@import "4.components/goto-content";
+@import "4.components/header";
+@import "4.components/nav";
+@import "4.components/footer";
+
+@import "5.trumps/utils";
 
 // Print styles. Have to stay on bottom of stylesheet.
-@import "base/print";
+@import "5.trumps/print";
