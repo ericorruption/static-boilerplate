@@ -1,0 +1,12 @@
+html {
+  min-height: 100%;
+  overflow-y: scroll;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

@@ -1,0 +1,22 @@
+.o-btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  transition: all .2s ease-out;
+  border: none;
+  padding: .25em .75em;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &--primary {
+    background-color: $brand-primary;
+    color: $btn-color-primary;
+  }
+}

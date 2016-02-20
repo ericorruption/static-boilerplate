@@ -21,31 +21,6 @@ textarea {
   -webkit-font-smoothing: antialiased;
 }
 
-html {
-  min-height: 100%;
-  overflow-y: scroll;
-  line-height: 1.4;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-legend {
-  @extend %visuallyhidden;
-}
-
-a,
-button,
-input,
-select,
-textarea {
-  outline-color: $outline-color;
-}
-
 audio,
 canvas,
 iframe,
@@ -53,41 +28,4 @@ img,
 svg,
 video {
   vertical-align: middle;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: $link-color;
-
-  &:hover,
-  &:focus {
-    color: $link-hover-color;
-  }
-}
-
-ul,
-ol {
-  padding: 0;
 }

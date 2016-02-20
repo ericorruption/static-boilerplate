@@ -1,7 +1,12 @@
-.o-row {
+@media (min-width: 48em) {
+  .o-row {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
 
-}
-
-.o-col {
-
+  .o-col {
+    display: table-cell;
+    vertical-align: top;
+  }
 }

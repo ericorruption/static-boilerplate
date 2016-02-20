@@ -1,5 +1,5 @@
-.goto-content {
-  @extend %visuallyhidden;
+.c-goto-content {
+  @extend .u-sr;
 
   &:focus {
     display: inline-block;

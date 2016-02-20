@@ -1,0 +1,14 @@
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  @extend .u-sr;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 3em;
+}

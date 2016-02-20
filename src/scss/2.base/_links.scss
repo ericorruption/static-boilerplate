@@ -1,9 +1,14 @@
 a {
+  color: $link-color;
   transition: all .2s ease-out;
 
   &:hover,
   &:focus {
-    opacity: .3;
+    color: $link-hover-color;
+  }
+
+  &:active {
+
   }
 
   &:visited {

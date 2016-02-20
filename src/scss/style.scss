@@ -1,25 +1,37 @@
-@import 'normalize.css';
-
-// Variables partial. To override bootstrap's or use your own variables.
 @import "1.config/variables";
-
-// Default partials. Don't mess with these!
 @import "1.config/mixins";
+
+
+// Base styles are inherited, so they shouldn't use classes.
+// Use sparingly.
+@import /* 2.base */'normalize.css';
 @import "2.base/default";
-
-// From now on, free territory. Use as much partials as necessary.
-// Write only @import's here.
-
+@import "2.base/scaffold";
 @import "2.base/links";
+@import "2.base/images";
+@import "2.base/lists";
+@import "2.base/forms";
 
+
+// repeatable ui patterns. Use namespaced classes from now on.
+// example: o-row
 @import "3.objects/grid";
+@import "3.objects/button";
+@import "3.objects/type";
+@import "3.objects/input";
+@import "3.objects/content-block";
 
+
+// Components. Use BEM naming. (c-block__element--modifier)
+// Namespace example: c-primary-nav
+// In case of page-based components, they can be organized in subfolders.
 @import "4.components/goto-content";
 @import "4.components/header";
 @import "4.components/nav";
 @import "4.components/footer";
 
-@import "5.trumps/utils";
 
-// Print styles. Have to stay on bottom of stylesheet.
+// Trump partials should be used to override most previous styles.
+// Namespace example: u-hidden
+@import "5.trumps/utils";
 @import "5.trumps/print";
