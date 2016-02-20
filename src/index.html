@@ -20,27 +20,34 @@
   <![endif]-->
 </head>
 <body>
-  <header class="main-header" role="banner">
-    <a href="#main-content" class="goto-content">Ir para o conteúdo principal</a>
-    <nav class="main-nav" role="navigation">
+  <header class="c-main-header" role="banner">
+    <a href="#main-content" class="c-goto-content">Ir para o conteúdo principal</a>
+    <nav class="c-main-nav" role="navigation">
     </nav>
   </header>
 
-  <main id="main-content" class="main-content" role="main">
-    <h1>Hello world</h1>
+  <main id="main-content" class="o-content-block c-main-content" role="main">
+    <h1 class="o-h1">Hello world</h1>
 
     <article role="article">
 
     </article>
 
-    <form action="" role="form"></form>
+    <form action="" role="form">
+      <fieldset>
+        <legend>Descrição do grupo de campos</legend>
+
+        <input type="text" class="o-input">
+        <button class="o-btn o-btn--primary">Enviar</button>
+      </fieldset>
+    </form>
   </main>
 
   <aside role="complementary">
 
   </aside>
 
-  <footer class="main-footer" role="contentinfo">
+  <footer class="c-main-footer" role="contentinfo">
 
   </footer>
 
