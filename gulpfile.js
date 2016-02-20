@@ -10,5 +10,5 @@ require('./gulp/html');
 require('./gulp/clean');
 
 gulp.task('build', ['html', 'css', 'javascript', 'images']);
-gulp.task('build:production', ['build', 'clean', 'css:production']);
+gulp.task('build:production', ['build', 'clean', 'css:production', 'javascript:production']);
 gulp.task('default', ['serve']);

@@ -23,3 +23,11 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 });
+
+gulp.task('javascript:production', function() {
+  return browserify('src/js/main.js').bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'));
+});
