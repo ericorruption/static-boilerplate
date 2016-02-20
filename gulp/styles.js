@@ -7,7 +7,7 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     postcss     = require('gulp-postcss'),
     cssPlugins  = [
-      require('autoprefixer'),
+      require('autoprefixer')({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
       require('postcss-import')
     ],
     minifyCss   = require('gulp-cssnano');
@@ -24,7 +24,7 @@ gulp.task('css', function() {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(cssPlugins))
-    .pipe(minifyCss())
+    .pipe(minifyCss({ autoprefixer: false }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
