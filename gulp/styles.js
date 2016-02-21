@@ -8,9 +8,9 @@ var gulp        = require('gulp'),
     postcss     = require('gulp-postcss'),
     cssPlugins  = [
       require('autoprefixer')({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
-      require('postcss-import')
-    ],
-    minifyCss   = require('gulp-cssnano');
+      require('postcss-import'),
+      require('cssnano')({ autoprefixer: false })
+    ];
 
 // error function for plumber
 var onError = function(err) {
@@ -24,7 +24,6 @@ gulp.task('css', function() {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(cssPlugins))
-    .pipe(minifyCss({ autoprefixer: false }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
