@@ -27,9 +27,9 @@
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
-      "browser":  true,
+      "browser": true,
       "commonjs": true,
-      "jquery":   true
+      "jquery": true
     }
   }
 }
