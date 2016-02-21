@@ -4,5 +4,6 @@ require('./track-js-errors')();
 
 (function ($) {
   'use strict';
-  // do shit
+
+  $('html').addClass('js');
 } (jQuery));

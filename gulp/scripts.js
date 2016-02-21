@@ -6,9 +6,17 @@ var gulp        = require('gulp'),
     source      = require('vinyl-source-stream'),
     sourcemaps  = require('gulp-sourcemaps'),
     buffer      = require('vinyl-buffer'),
-    uglify      = require('gulp-uglify');
+    uglify      = require('gulp-uglify'),
+    eslint      = require('gulp-eslint');
 
-gulp.task('javascript', function() {
+gulp.task('eslint', function() {
+  return gulp.src(['src/js/**/*.js'])
+          .pipe(eslint())
+          .pipe(eslint.format())
+          .pipe(eslint.failAfterError());
+});
+
+gulp.task('javascript', ['eslint'], function() {
   return browserify('src/js/main.js')
     .bundle()
     .on('error', function(err) {
@@ -24,7 +32,7 @@ gulp.task('javascript', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('javascript:production', function() {
+gulp.task('javascript:production', ['eslint'], function() {
   return browserify('src/js/main.js').bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())

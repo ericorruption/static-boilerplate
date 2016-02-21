@@ -1,4 +1,5 @@
 // Track JavaScript errors in Google Analytics
+/* global ga */
 module.exports = function(){
   var undefined,
       link = function (href) {
