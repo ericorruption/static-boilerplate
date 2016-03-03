@@ -1,9 +1,15 @@
 'use strict';
 
 var gulp       = require('gulp'),
-    minifyHtml = require('gulp-htmlmin');
+    minifyHtml = require('gulp-htmlmin'),
+    validator  = require('gulp-html5-lint');
 
-gulp.task('html', function() {
+gulp.task('validate-html', function() {
+  return gulp.src('src/*.html')
+  .pipe(validator());
+});
+
+gulp.task('html', ['validate-html'], function() {
   return gulp.src('src/*.html')
     .pipe(minifyHtml({
       collapseWhitespace: true
