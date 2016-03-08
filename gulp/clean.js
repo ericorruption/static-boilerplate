@@ -3,6 +3,4 @@
 import gulp from 'gulp';
 import del  from 'del';
 
-gulp.task('clean', function() {
-  return del(['dist/css', 'dist/js']);
-});
+gulp.task('clean', () => del(['dist/css', 'dist/js']));

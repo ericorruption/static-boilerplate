@@ -24,21 +24,21 @@ var onError = function(err) {
   this.emit('end');
 };
 
-gulp.task('css', function() {
-  return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
+gulp.task('css', () =>
+  gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(cssPlugins))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-});
+    .pipe(browserSync.stream())
+);
 
-gulp.task('css:production', function() {
-  return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
+gulp.task('css:production', () =>
+  gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
     .pipe(sass())
     .pipe(postcss(cssPlugins))
     .pipe(minifyCss())
-    .pipe(gulp.dest('dist/css'));
-});
+    .pipe(gulp.dest('dist/css'))
+);

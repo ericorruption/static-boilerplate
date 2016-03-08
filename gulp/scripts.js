@@ -11,15 +11,15 @@ import eslint      from 'gulp-eslint';
 
 browserSync.get('static-boilerplate');
 
-gulp.task('eslint', function() {
-  return gulp.src(['src/js/**/*.js'])
-          .pipe(eslint())
-          .pipe(eslint.format())
-          .pipe(eslint.failAfterError());
-});
+gulp.task('eslint', () =>
+  gulp.src(['src/js/**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+);
 
-gulp.task('javascript', ['eslint'], function() {
-  return browserify('src/js/main.js')
+gulp.task('javascript', ['eslint'], () =>
+  browserify('src/js/main.js')
     .bundle()
     .on('error', function(err) {
       console.log(err);
@@ -31,13 +31,13 @@ gulp.task('javascript', ['eslint'], function() {
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
-});
+    .pipe(browserSync.stream())
+);
 
-gulp.task('javascript:production', ['eslint'], function() {
-  return browserify('src/js/main.js').bundle()
+gulp.task('javascript:production', ['eslint'], () =>
+  browserify('src/js/main.js').bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
-});
+    .pipe(gulp.dest('dist/js'))
+);
