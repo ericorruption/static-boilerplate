@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-    del  = require('del');
+import gulp from 'gulp';
+import del  from 'del';
 
 gulp.task('clean', function() {
   return del(['dist/css', 'dist/js']);

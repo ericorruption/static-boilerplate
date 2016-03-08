@@ -1,7 +1,9 @@
 'use strict';
 
-var gulp        = require('gulp'),
-    browserSync = require('browser-sync').create('static-boilerplate');
+import gulp        from 'gulp';
+import browserSync from 'browser-sync';
+
+browserSync.create('static-boilerplate');
 
 gulp.task('serve', ['build'], function() {
   browserSync.init({

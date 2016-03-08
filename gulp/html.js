@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp       = require('gulp'),
-    minifyHtml = require('gulp-htmlmin'),
-    validator  = require('gulp-html5-lint');
+import gulp        from 'gulp';
+import minifyHtml  from 'gulp-htmlmin';
+import validator   from 'gulp-html5-lint';
 
 gulp.task('validate-html', function() {
   return gulp.src('src/*.html')

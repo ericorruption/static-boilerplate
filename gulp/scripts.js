@@ -1,13 +1,15 @@
 'use strict'
 
-var gulp        = require('gulp'),
-    browserSync = require('browser-sync').get('static-boilerplate'),
-    browserify  = require('browserify'),
-    source      = require('vinyl-source-stream'),
-    sourcemaps  = require('gulp-sourcemaps'),
-    buffer      = require('vinyl-buffer'),
-    uglify      = require('gulp-uglify'),
-    eslint      = require('gulp-eslint');
+import gulp        from 'gulp';
+import browserSync from 'browser-sync';
+import browserify  from 'browserify';
+import source      from 'vinyl-source-stream';
+import sourcemaps  from 'gulp-sourcemaps';
+import buffer      from 'vinyl-buffer';
+import uglify      from 'gulp-uglify';
+import eslint      from 'gulp-eslint';
+
+browserSync.get('static-boilerplate');
 
 gulp.task('eslint', function() {
   return gulp.src(['src/js/**/*.js'])
