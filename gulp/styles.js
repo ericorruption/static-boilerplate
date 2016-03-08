@@ -19,7 +19,7 @@ const cssPlugins = [
 browserSync.get('static-boilerplate');
 
 // error function for plumber
-var onError = function(err) {
+function onError(err) {
   console.log(err);
   this.emit('end');
 };
