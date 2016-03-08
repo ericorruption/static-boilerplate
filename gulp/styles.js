@@ -10,7 +10,7 @@ import autoprefixer from 'autoprefixer';
 import cssImport    from 'postcss-import';
 import cssNano      from 'cssnano';
 
-let cssPlugins = [
+const cssPlugins = [
   autoprefixer({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
   cssImport,
   cssNano({ autoprefixer: false })
