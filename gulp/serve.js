@@ -10,8 +10,7 @@ gulp.task('serve', ['build'], function() {
     // using vagrant or other server:
     // proxy: "http://localhost:8000"
     // or use builtin server:
-    server: './dist',
-    files: ['src/*.html']
+    server: './dist'
   });
 
   gulp.watch(['src/*.html'], ['html']);
