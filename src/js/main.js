@@ -1,6 +1,7 @@
 'use strict';
 
-require('./track-js-errors')();
-var $ = require('jquery');
+import trackErrors from './track-js-errors';
+import $ from 'jquery';
 
+trackErrors();
 $('html').addClass('js');

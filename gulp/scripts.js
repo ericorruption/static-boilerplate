@@ -3,6 +3,7 @@
 import gulp        from 'gulp';
 import browserSync from 'browser-sync';
 import browserify  from 'browserify';
+import babelify    from 'babelify';
 import source      from 'vinyl-source-stream';
 import sourcemaps  from 'gulp-sourcemaps';
 import buffer      from 'vinyl-buffer';
@@ -20,6 +21,7 @@ gulp.task('eslint', () =>
 
 gulp.task('javascript', ['eslint'], () =>
   browserify('src/js/main.js')
+    .transform(babelify)
     .bundle()
     .on('error', function(err) {
       console.log(err);
