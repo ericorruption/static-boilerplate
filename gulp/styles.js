@@ -33,6 +33,5 @@ gulp.task('css:production', function() {
   return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
     .pipe(sass())
     .pipe(postcss(cssPlugins))
-    .pipe(minifyCss())
     .pipe(gulp.dest('dist/css'));
 });
