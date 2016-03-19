@@ -20,7 +20,7 @@
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
-    "jquery": "^2.2.1",
+    "jquery": "^2.2.2",
     "normalize.css": "^3.0.3",
     "postcss-import": "^8.0.2",
     "vinyl-buffer": "^1.0.0",
