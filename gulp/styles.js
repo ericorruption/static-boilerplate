@@ -1,37 +1,43 @@
 'use strict';
 
-var gulp        = require('gulp'),
-    browserSync = require('browser-sync').get('static-boilerplate'),
-    plumber     = require('gulp-plumber'),
-    sourcemaps  = require('gulp-sourcemaps'),
-    sass        = require('gulp-sass'),
-    postcss     = require('gulp-postcss'),
-    cssPlugins  = [
-      require('autoprefixer')({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
-      require('postcss-import'),
-      require('cssnano')({ autoprefixer: false })
-    ];
+import gulp         from 'gulp';
+import browserSync  from 'browser-sync';
+import plumber      from 'gulp-plumber';
+import sourcemaps   from 'gulp-sourcemaps';
+import sass         from 'gulp-sass';
+import postcss      from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssImport    from 'postcss-import';
+import cssNano      from 'cssnano';
+
+const cssPlugins = [
+  autoprefixer({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
+  cssImport,
+  cssNano({ autoprefixer: false })
+];
+
+browserSync.get('static-boilerplate');
 
 // error function for plumber
-var onError = function(err) {
+function onError(err) {
   console.log(err);
   this.emit('end');
 };
 
-gulp.task('css', function() {
-  return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
+gulp.task('css', () =>
+  gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(cssPlugins))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-});
+    .pipe(browserSync.stream())
+);
 
-gulp.task('css:production', function() {
-  return gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
+gulp.task('css:production', () =>
+  gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
     .pipe(sass())
     .pipe(postcss(cssPlugins))
-    .pipe(gulp.dest('dist/css'));
-});
+    .pipe(gulp.dest('dist/css'))
+);

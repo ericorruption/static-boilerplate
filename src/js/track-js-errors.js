@@ -1,15 +1,17 @@
 // Track JavaScript errors in Google Analytics
 /* global ga */
-module.exports = function(){
-  var undefined,
-      link = function (href) {
-        var a = window.document.createElement('a');
-        a.href = href;
-        return a;
-      };
+
+'use strict';
+
+export default function () {
+  function link(href) {
+    const a = window.document.createElement('a');
+    a.href = href;
+    return a;
+  }
 
   window.onerror = function (message, file, line, column) {
-    var host = link(file).hostname;
+    const host = link(file).hostname;
     ga('send', {
       'hitType': 'event',
       'eventCategory': (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
@@ -18,4 +20,4 @@ module.exports = function(){
       'nonInteraction': 1
     });
   };
-};
+}

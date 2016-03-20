@@ -1,15 +1,16 @@
 'use strict';
 
-var gulp        = require('gulp'),
-    browserSync = require('browser-sync').create('static-boilerplate');
+import gulp        from 'gulp';
+import browserSync from 'browser-sync';
+
+browserSync.create('static-boilerplate');
 
 gulp.task('serve', ['build'], function() {
   browserSync.init({
     // using vagrant or other server:
     // proxy: "http://localhost:8000"
     // or use builtin server:
-    server: './dist',
-    files: ['src/*.html']
+    server: './dist'
   });
 
   gulp.watch(['src/*.html'], ['html']);

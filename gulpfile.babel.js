@@ -1,13 +1,13 @@
 'use strict';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-require('./gulp/serve');
-require('./gulp/scripts');
-require('./gulp/styles');
-require('./gulp/images');
-require('./gulp/html');
-require('./gulp/clean');
+import './gulp/serve';
+import './gulp/scripts';
+import './gulp/styles';
+import './gulp/images';
+import './gulp/html';
+import './gulp/clean';
 
 gulp.task('build', ['html', 'css', 'javascript', 'images']);
 gulp.task('build:production', ['build', 'clean', 'css:production', 'javascript:production']);

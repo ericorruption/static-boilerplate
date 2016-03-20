@@ -1,16 +1,16 @@
 'use strict';
 
-var gulp     = require('gulp'),
-    imagemin = require('gulp-imagemin');
+import gulp     from 'gulp';
+import imagemin from 'gulp-imagemin';
 
-gulp.task('images', function() {
-  return gulp.src('src/img/**/*')
+gulp.task('images', () =>
+  gulp.src('src/img/**/*')
     .pipe(imagemin({
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('dist/img'));
-});
+    .pipe(gulp.dest('dist/img'))
+);
 
 // SPRITE SUPPORT WITH gulp.spritesmith
 // gulp.task('sprite', function() {
