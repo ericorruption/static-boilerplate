@@ -35,11 +35,3 @@ gulp.task('javascript', ['eslint'], () =>
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream())
 );
-
-gulp.task('javascript:production', ['eslint'], () =>
-  browserify('src/js/main.js').bundle()
-    .pipe(source('bundle.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
-);

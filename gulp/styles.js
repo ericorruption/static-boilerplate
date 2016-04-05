@@ -30,14 +30,7 @@ gulp.task('css', () =>
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(cssPlugins))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream())
-);
-
-gulp.task('css:production', () =>
-  gulp.src(['src/scss/*.scss', '!src/scss/_*.scss'])
-    .pipe(sass())
-    .pipe(postcss(cssPlugins))
-    .pipe(gulp.dest('dist/css'))
 );
