@@ -4,20 +4,18 @@ This is how I roll. To get started:
 * Install [node.js](nodejs.org)
 * `npm install`
 * `npm start`
-* Update CDN references if necessary
 * Have fun!
 
 
 ## Available Gulp tasks
 All tasks are executed writing `gulp [taskname]` on terminal. `gulp` triggers
-the default task. You can use the local instance of gulp acessing `node_modules/.bin/gulp`.
+the default task. You can use the local instance of gulp accessing `node_modules/.bin/gulp`.
 
-* `javascript`: lint, concatenate and minify js
-* `css`: compile less and minify css. generates sourcemaps
-* `html`: minify html
+* `javascript`: lint, transpile, concatenate and minify js
+* `css`: compile sass and minify css. generates sourcemaps
+* `html`: lint html, then minify if it passes the linting
 * `images`: optimize images
 * `build`: run all the tasks above
-* `build:production`: generate assets without sourcemaps
 * `serve`: start static webserver, watch and reload changes on files
 * `default`: `serve` shortcut
 
@@ -26,11 +24,10 @@ the default task. You can use the local instance of gulp acessing `node_modules/
 * improve docs, obviously.
 * add svg sprite solution
 * enforce html / css coding style
-* eslint: enforce coding style and linting on JS
 * static asset hashing
 * inline critical css
-* build for production (invalidate static assets, etc)
 * continuous integration with Travis CI
+
 
 ## modules and their purpose
 * autoprefixer: vendor-prefix CSS
@@ -41,8 +38,9 @@ the default task. You can use the local instance of gulp acessing `node_modules/
 * eslint: js linting
 * postcss-import: import css files into sass
 * browserify (+ vinyl source stream and buffer): bundle js modules
+* babelify: browserify transform to transpile ES6 code
 * uglify: minify js
 * imagemin: optimize images
 * sourcemaps: sourcemap support
 * htmlmin: squish html files
-* del: delete stuff.
+* html5-lint: lint html according to w3c validator
