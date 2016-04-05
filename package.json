@@ -25,7 +25,7 @@
     "gulp-uglify": "^1.5.3",
     "jquery": "^2.2.2",
     "normalize.css": "^4.0.0",
-    "postcss-import": "^8.0.2",
+    "postcss-import": "^8.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
