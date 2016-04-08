@@ -22,7 +22,6 @@
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
-    "jquery": "^2.2.2",
     "normalize.css": "^4.0.0",
     "postcss-import": "^8.1.0",
     "vinyl-buffer": "^1.0.0",
@@ -41,8 +40,7 @@
     "env": {
       "es6": true,
       "browser": true,
-      "commonjs": true,
-      "jquery": true
+      "commonjs": true
     }
   }
 }
