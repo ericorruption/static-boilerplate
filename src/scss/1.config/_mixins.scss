@@ -26,13 +26,6 @@
   }
 }
 
-@mixin font-size($size) {
-  $rem: $size / 16;
-
-  font-size: $size;
-  font-size: $rem / ($rem * 0 + 1) + rem;
-}
-
 /*
  * Image replacement (does not work on buttons/inputs)
  */
