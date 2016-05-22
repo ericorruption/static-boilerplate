@@ -7,6 +7,7 @@ import './gulp/scripts';
 import './gulp/styles';
 import './gulp/images';
 import './gulp/html';
+import './gulp/copy';
 
-gulp.task('build', ['html', 'css', 'javascript', 'images']);
+gulp.task('build', ['copy', 'html', 'css', 'javascript', 'images']);
 gulp.task('default', ['serve']);
