@@ -19,7 +19,6 @@
 // example: o-row
 @import "3.objects/grid";
 @import "3.objects/button";
-@import "3.objects/type";
 @import "3.objects/input";
 @import "3.objects/content-block";
 
@@ -31,6 +30,7 @@
 @import "4.components/header";
 @import "4.components/nav";
 @import "4.components/footer";
+@import "4.components/type";
 
 
 // Trump partials should be used to override most previous styles.
