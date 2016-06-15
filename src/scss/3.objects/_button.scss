@@ -1,3 +1,4 @@
+// objects shouldn't have cosmetic styles...
 .o-btn {
   display: inline-block;
   vertical-align: middle;
@@ -15,6 +16,7 @@
     text-decoration: none;
   }
 
+  // ...but their modifiers can.
   &--primary {
     background-color: $brand-primary;
     color: $btn-color-primary;

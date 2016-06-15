@@ -1,3 +1,4 @@
+// Any non-rendering / configuration (eg. animation keyframes) code goes here.
 @import "1.config/variables";
 @import "1.config/mixins";
 
@@ -14,6 +15,7 @@
 
 
 // repeatable ui patterns. Use namespaced classes from now on.
+// preferably objects are not cosmetic and don't have children elements.
 // example: o-row
 @import "3.objects/grid";
 @import "3.objects/button";
@@ -32,6 +34,8 @@
 
 
 // Trump partials should be used to override most previous styles.
+// They usually carry !important declarations. (However it would be best if
+// we relied solely on source order to define specificity.)
 // Namespace example: u-hidden
 @import "5.trumps/utils";
 @import "5.trumps/print";

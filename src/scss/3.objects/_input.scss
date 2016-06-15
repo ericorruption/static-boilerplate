@@ -1,3 +1,6 @@
+// input objects are the only ones that can have cosmetic styles
+// because their definition in base would be too complex.
+// e.g.: input[type="text"], input[type="password"]...
 .o-input {
   line-height: 2;
   height: 2em; // required by IE
