@@ -2,18 +2,22 @@
   @font-face {
     font-family: $font-family;
     src: url("#{$file-path}.eot");
+    /* stylelint-disable */
+    // disabling stylelint here because the indentation rule
+    // doesn't like that we align all the url declarations.
     src: url("#{$file-path}.eot?#iefix") format('embedded-opentype'),
          url("#{$file-path}.woff2") format('woff2'),
          url("#{$file-path}.woff") format('woff'),
          url("#{$file-path}.ttf") format('truetype'),
          url("#{$file-path}.svg#${font-family}") format('svg');
+    /* stylelint-enable */
     font-weight: $weight;
     font-style: $style;
   }
 }
 
-@mixin placeholder-color($text-color){
-  &:-ms-input-placeholder{
+@mixin placeholder-color($text-color) {
+  &:-ms-input-placeholder {
     color: $text-color;
   }
 
@@ -34,10 +38,8 @@
   background-color: transparent;
   border: 0;
   overflow: hidden;
-  /* IE 6/7 fallback */
-  *text-indent: -9999px;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     width: 0;

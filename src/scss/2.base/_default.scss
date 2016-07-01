@@ -1,7 +1,8 @@
 // These should have the same values as the meta viewport tag.
 @viewport {
   width: device-width;
-  zoom: 1.0;
+  zoom: 1.0; /* stylelint-disable-line */
+  // stylelint is disabled for this rule because zoom can have a trailing zero
 }
 
 ::selection {
