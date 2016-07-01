@@ -9,6 +9,7 @@ import postcss      from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssImport    from 'postcss-import';
 import cssNano      from 'cssnano';
+import stylelint    from 'gulp-stylelint';
 
 const cssPlugins = [
   autoprefixer({ remove: false, browsers: '> 1%, last 2 versions, ie 9'}),
@@ -33,4 +34,14 @@ gulp.task('css', () =>
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream())
+);
+
+gulp.task('stylelint', () =>
+  gulp.src(['src/scss/**/*.scss'])
+  .pipe(stylelint({
+    syntax: 'scss',
+    reporters: [
+      { formatter: 'string', console: true}
+    ]
+  }))
 );
