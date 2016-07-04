@@ -16,7 +16,7 @@
     "browserify": "^13.0.1",
     "cssnano": "^3.7.1",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^2.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-html5-lint": "^1.1.0",
     "gulp-htmlmin": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
@@ -53,9 +53,15 @@
     "rules": {
       "max-empty-lines": 2,
       "number-leading-zero": "never",
-      "at-rule-no-unknown": [true, {
-        "ignoreAtRules": ["mixin", "extend"]
-      }]
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "mixin",
+            "extend"
+          ]
+        }
+      ]
     }
   }
 }
