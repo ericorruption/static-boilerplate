@@ -8,7 +8,7 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
+    "autoprefixer": "^6.3.7",
     "babel-core": "^6.10.4",
     "babel-preset-es2015": "^6.9.0",
     "babelify": "^7.3.0",
@@ -53,9 +53,15 @@
     "rules": {
       "max-empty-lines": 2,
       "number-leading-zero": "never",
-      "at-rule-no-unknown": [true, {
-        "ignoreAtRules": ["mixin", "extend"]
-      }]
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "mixin",
+            "extend"
+          ]
+        }
+      ]
     }
   }
 }
