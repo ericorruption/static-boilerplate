@@ -1,0 +1,32 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": [
+      2, {
+        "ignore": "value"
+      }
+    ],
+    "declaration-colon-newline-after": null,
+    "max-empty-lines": 2,
+    "number-leading-zero": "never",
+    "at-rule-empty-line-before": [
+      "always", {
+        "ignoreAtRules": [
+          "extend",
+          "import",
+          "font-face",
+          "viewport"
+        ]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "extend"
+        ]
+      }
+    ]
+  }
+}
