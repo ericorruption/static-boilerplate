@@ -23,7 +23,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-stylelint": "^3.2.0",
+    "gulp-stylelint": "^3.3.0",
     "gulp-uglify": "^2.0.0",
     "normalize.css": "^4.2.0",
     "postcss-import": "^8.1.2",
