@@ -10,3 +10,12 @@
     vertical-align: top;
   }
 }
+
+
+@media print {
+  .o-row,
+  .o-col {
+    width: 100%;
+    display: block;
+  }
+}

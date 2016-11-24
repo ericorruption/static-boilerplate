@@ -14,4 +14,8 @@ a {
   &:visited {
     // Filling this one is good UX.
   }
+
+  @media print {
+    word-wrap: break-word;
+  }
 }
