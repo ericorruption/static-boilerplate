@@ -1,7 +1,6 @@
+// Hide only visually, but have it available for screenreaders (sr): h5bp.com/v
+// 1. https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
 .u-sr {
-  /*
-   * Hide only visually, but have it available for screenreaders: h5bp.com/v
-   */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,6 +9,7 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
+  white-space: nowrap; // 1
 }
 
 .u-clearfix::after {
