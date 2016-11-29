@@ -4,10 +4,6 @@ fieldset {
   padding: 0;
 }
 
-legend {
-  @extend .u-sr;
-}
-
 textarea {
   resize: vertical;
   min-height: 3em;
