@@ -1,9 +1,18 @@
 @media print {
+  // 1. Black prints faster: http://www.sanbeiji.com/archives/953
   *,
   *::before,
-  *::after {
+  *::after,
+  p::first-letter,
+  p::first-line,
+  div::first-letter,
+  div::first-line,
+  li::first-letter,
+  li::first-line,
+  blockquote::first-letter,
+  blockquote::first-line {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    color: #000 !important; // 1
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -30,23 +39,24 @@
     content: "";
   }
 
+  pre {
+    white-space: pre-wrap !important;
+  }
+
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
+  // 1. Printing tables: http://css-discuss.incutio.com/wiki/Printing_Tables
   thead {
-    display: table-header-group; /* h5bp.com/t */
+    display: table-header-group; // 1
   }
 
   tr,
   img {
     page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
   }
 
   p,
@@ -61,22 +71,23 @@
     page-break-after: avoid;
   }
 
-  .c-main-header *,
-  .c-main-nav,
-  .c-main-footer,
-  aside {
-    display: none !important;
-  }
-
-  .c-logo {
-    display: block !important;
-  }
-
   body,
   article,
   main {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .u-no-print {
+    display: none !important;
+  }
+
+  .u-print-break {
+    page-break-before: always;
+  }
+
+  .u-print-break-after {
+    page-break-after: always;
   }
 }
