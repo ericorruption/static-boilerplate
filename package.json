@@ -14,7 +14,7 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.2",
     "browserify": "^13.1.1",
-    "cssnano": "^3.8.1",
+    "cssnano": "^3.8.2",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",
