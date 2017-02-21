@@ -1,4 +1,6 @@
 # Static Boilerplate
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ericorruption/static-boilerplate.svg)](https://greenkeeper.io/)
 This is how I roll. To get started:
 
 * Install [node.js](nodejs.org)
