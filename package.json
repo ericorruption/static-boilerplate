@@ -5,35 +5,48 @@
   "license": "UNLICENSED",
   "repository": "ericorruption/static-boilerplate",
   "scripts": {
-    "start": "gulp"
+    "favicon": "cpy src/*.* dist",
+    "html": "html-minifier --collapse-whitespace --file-ext html --input-dir src --output-dir dist",
+    "precss": "stylelint src/scss/**/*.scss",
+    "css": "node-sass src/scss/ -o dist/css/tmp --include-path=node_modules",
+    "postcss": "postcss --use autoprefixer --use cssnano -d dist/css/ dist/css/tmp/*.css --no-map",
+    "prejs": "standard --fix",
+    "js": "webpack -p",
+    "img": "cpy img/**/*.* ../dist --cwd src --parents",
+    "watch-html": "chokidar src/index.html -c 'npm run html'",
+    "watch-css": "chokidar src/scss/ -c 'npm run css'",
+    "watch-js": "webpack --watch --progress -d",
+    "watch-img": "chokidar src/img/ -c 'npm run img'",
+    "watch": "npm-run-all --parallel watch-*",
+    "serve": "browser-sync start --server dist --files 'dist', '!dist/css/tmp'",
+    "build": "npm-run-all favicon html css js img",
+    "prestart": "npm run build",
+    "start": "npm-run-all --parallel watch serve"
   },
   "dependencies": {
-    "autoprefixer": "^6.7.4",
-    "babel-core": "^6.23.1",
-    "babel-preset-es2015": "^6.22.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.18.8",
-    "browserify": "^14.1.0",
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "chokidar-cli": "^1.2.0",
+    "cpy-cli": "^1.0.1",
     "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.3.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-stylelint": "^3.9.0",
-    "gulp-uglify": "^2.0.1",
-    "normalize.css": "^5.0.0",
-    "postcss-import": "^9.1.0",
-    "stylelint-config-standard": "^16.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "html-minifier": "^3.5.6",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1",
+    "standard": "^10.0.3",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0",
+    "webpack": "^3.8.1"
   },
   "babel": {
     "presets": [
-      "es2015"
+      "env"
     ]
   }
 }
