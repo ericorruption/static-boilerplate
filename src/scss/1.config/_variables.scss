@@ -4,7 +4,7 @@ $brand-primary:    #252128;
 // Objects
 $text-color:       #222;
 $link-color:       $brand-primary;
-$link-hover-color: darken($link-color, 10%);
+$link-hover-color: lighten($link-color, 10%);
 
 $selection-bg-color: $link-color;
 $selection-text-color: $text-color;
