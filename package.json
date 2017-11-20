@@ -7,7 +7,7 @@
   "scripts": {
     "favicon": "ncp src/icons dist",
     "html": "html-minifier --collapse-whitespace --file-ext html --input-dir src --output-dir dist",
-    "precss": "stylelint src/scss/**/*.scss",
+    "precss": "stylelint \"src/scss/**/*.scss\"",
     "css": "node-sass src/scss/ -o dist/css/tmp --include-path=node_modules",
     "postcss": "postcss --use colorguard --use autoprefixer --use cssnano -d dist/css/ dist/css/tmp/*.css --no-map",
     "prejs": "standard --fix",
