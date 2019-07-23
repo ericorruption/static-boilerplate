@@ -9,7 +9,8 @@
     "precss": "stylelint \"src/scss/**/*.scss\"",
     "postcss": "postcss --use colorguard --use autoprefixer --use cssnano -d dist/css/ dist/css/tmp/*.css --no-map",
     "prejs": "standard --fix",
-    "serve": "browser-sync start --server dist --files 'dist', '!dist/css/tmp/**/*'",
+    "lint": "npm run prehtml && npm run precss && npm run prejs",
+    "serve": "npx browser-sync start --server dist --files 'dist'",
     "prebuild": "npx rimraf dist",
     "build": "parcel build src/index.html",
     "postbuild": "npx cpy-cli src/icons/favicon.ico dist",
@@ -20,11 +21,11 @@
   },
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
-    "browser-sync": "2.26.3",
     "colorguard": "1.2.1",
     "cssnano": "^3.10.0",
     "html-minifier": "3.5.15",
     "htmlhint": "0.10.1",
+    "husky": "^3.0.1",
     "parcel-bundler": "^1.12.3",
     "postcss-cli": "5.0.0",
     "sass": "^1.22.7",
@@ -36,5 +37,11 @@
   "prettier": {
     "singleQuote": true,
     "semi": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   }
 }
