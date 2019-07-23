@@ -16,19 +16,19 @@
     "start": "parcel src/index.html"
   },
   "dependencies": {
-    "normalize.css": "8.0.0"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
     "colorguard": "1.2.1",
-    "htmlhint": "0.10.1",
+    "htmlhint": "^0.11.0",
     "husky": "^3.0.1",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-imagemin": "^3.0.0",
     "sass": "^1.22.7",
-    "standard": "11.0.1",
-    "stylelint": "9.10.1",
-    "stylelint-config-standard": "18.2.0",
+    "standard": "^13.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
     "typescript": "^3.5.3"
   },
   "prettier": {
