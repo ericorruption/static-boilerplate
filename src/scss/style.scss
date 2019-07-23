@@ -1,43 +1,37 @@
-@import
+// Any non-rendering / configuration (eg. animation keyframes) code goes here.
+@import '1.config/variables';
+@import '1.config/mixins';
 
-  // Any non-rendering / configuration (eg. animation keyframes) code goes here.
-  "1.config/variables",
-  "1.config/mixins",
+// Base styles are inherited, so they shouldn't use classes.
+// Use sparingly.
+@import 'node_modules/normalize.css/normalize';
+@import '2.base/default';
+@import '2.base/scaffold';
+@import '2.base/links';
+@import '2.base/images';
+@import '2.base/lists';
+@import '2.base/forms';
 
+// repeatable ui patterns. Use namespaced classes from now on.
+// preferably objects are not cosmetic and don't have children elements.
+// example: o-row
+@import '3.objects/grid';
+@import '3.objects/button';
+@import '3.objects/input';
+@import '3.objects/content-block';
 
-  // Base styles are inherited, so they shouldn't use classes.
-  // Use sparingly.
-  /* 2.base */'normalize.css/normalize',
-  "2.base/default",
-  "2.base/scaffold",
-  "2.base/links",
-  "2.base/images",
-  "2.base/lists",
-  "2.base/forms",
+// Components. Use BEM naming. (c-block__element--modifier)
+// Namespace example: c-primary-nav
+// In case of page-based components, they can be organized in subfolders.
+@import '4.components/goto-content';
+@import '4.components/header';
+@import '4.components/nav';
+@import '4.components/footer';
+@import '4.components/type';
 
-
-  // repeatable ui patterns. Use namespaced classes from now on.
-  // preferably objects are not cosmetic and don't have children elements.
-  // example: o-row
-  "3.objects/grid",
-  "3.objects/button",
-  "3.objects/input",
-  "3.objects/content-block",
-
-
-  // Components. Use BEM naming. (c-block__element--modifier)
-  // Namespace example: c-primary-nav
-  // In case of page-based components, they can be organized in subfolders.
-  "4.components/goto-content",
-  "4.components/header",
-  "4.components/nav",
-  "4.components/footer",
-  "4.components/type",
-
-
-  // Trump partials should be used to override most previous styles.
-  // They usually carry !important declarations. (However it would be best if
-  // we relied solely on source order to define specificity.)
-  // Namespace example: u-hidden
-  "5.trumps/utils",
-  "5.trumps/print";
+// Trump partials should be used to override most previous styles.
+// They usually carry !important declarations. (However it would be best if
+// we relied solely on source order to define specificity.)
+// Namespace example: u-hidden
+@import '5.trumps/utils';
+@import '5.trumps/print';
