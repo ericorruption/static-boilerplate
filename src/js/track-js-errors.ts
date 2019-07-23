@@ -1,6 +1,4 @@
 // Track JavaScript errors in Google Analytics
-/* global ga */
-
 export default function () {
   function link (href) {
     const a = window.document.createElement('a')
