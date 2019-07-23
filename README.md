@@ -26,7 +26,7 @@ Fork it. Branch it. Push it. PR it.
 
 ## TODO
 
-- image optimization
+- image optimization preserves folder structure (is it really necessary?)
 - enforce html style
 - inline critical css
 - continuous integration with Travis CI (or other service)
