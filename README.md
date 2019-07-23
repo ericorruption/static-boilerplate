@@ -31,4 +31,6 @@ Fork it. Branch it. Push it. PR it.
 - inline critical css
 - continuous integration with Travis CI (or other service)
 - stop using a css architecture? (no point)
+- use postcss only instead of sass (since the compiler supports `@import`s)
 - tests
+- enforce typescript style (maybe deprecating standard)

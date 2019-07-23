@@ -7,7 +7,6 @@
   "scripts": {
     "prehtml": "htmlhint src",
     "precss": "stylelint \"src/scss/**/*.scss\"",
-    "postcss": "postcss --use colorguard --use autoprefixer --use cssnano -d dist/css/ dist/css/tmp/*.css --no-map",
     "prejs": "standard --fix",
     "lint": "npm run prehtml && npm run precss && npm run prejs",
     "serve": "npx browser-sync start --server dist --files 'dist'",
@@ -22,13 +21,10 @@
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
     "colorguard": "1.2.1",
-    "cssnano": "^3.10.0",
-    "html-minifier": "3.5.15",
     "htmlhint": "0.10.1",
     "husky": "^3.0.1",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-imagemin": "^3.0.0",
-    "postcss-cli": "5.0.0",
     "sass": "^1.22.7",
     "standard": "11.0.1",
     "stylelint": "9.10.1",
