@@ -1,10 +1,10 @@
-# Static Boilerplate [![Greenkeeper badge](https://badges.greenkeeper.io/ericorruption/static-boilerplate.svg)](https://greenkeeper.io/)
+# Static Boilerplate
 
 This is how I roll.
 
 ## Dependencies
 
-[Node.js v8.10.0+](https://nodejs.org) (Preferably through the use of [NVM](https://github.com/creationix/nvm))
+[Node.js v10.0+](https://nodejs.org) (Preferably through the use of [NVM](https://github.com/creationix/nvm))
 
 ## Installing
 
@@ -13,6 +13,7 @@ Run `npm install` after cloning the project and navigating to the project folder
 ## Running
 
 In the project folder type `npm start` to spin a local server with live reloading and asset processing.
+You can also run `npm run serve` to cross browser test multiple browsers at the same time with the help of Browsersync.
 
 ## Deployment
 
@@ -27,6 +28,7 @@ Fork it. Branch it. Push it. PR it.
 
 - image optimization
 - enforce html style
-- static asset hashing
 - inline critical css
-- continuous integration with Travis CI
+- continuous integration with Travis CI (or other service)
+- stop using a css architecture? (no point)
+- tests
