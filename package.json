@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
     "colorguard": "1.2.1",
+    "cssnano": "^4.1.10",
     "htmlhint": "^0.11.0",
     "husky": "^3.0.1",
     "parcel-bundler": "^1.12.3",
