@@ -14,7 +14,7 @@
     "prejs": "standard --fix",
     "js": "webpack --mode production",
     "img": "ncp src/img dist/img",
-    "watch-html": "chokidar src/index.html -c \"npm run html\"",
+    "watch-html": "chokidar src/**/*.html -c \"npm run html\"",
     "watch-css": "chokidar src/scss/ -c \"npm run css\"",
     "watch-js": "webpack --mode development --watch",
     "watch-img": "chokidar src/img/ -c \"npm run img\"",
