@@ -25,7 +25,7 @@
     "start": "npm-run-all --parallel watch serve"
   },
   "dependencies": {
-    "normalize.css": "8.0.0"
+    "normalize.css": "8.0.1"
   },
   "devDependencies": {
     "autoprefixer": "8.4.1",
