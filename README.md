@@ -1,5 +1,10 @@
 # Static Boilerplate [![Greenkeeper badge](https://badges.greenkeeper.io/ericorruption/static-boilerplate.svg)](https://greenkeeper.io/)
 
+Lately I'd recommend jumping into something more stable depending on your requirements:
+- Is it small / simple enough that it can be static? https://www.11ty.dev/
+- Is it a web app using React? https://create-react-app.dev/
+- Is it a wordpress project? Take a look at [Roots](https://roots.io/) and their tools.
+
 This is how I roll.
 
 ## Dependencies
